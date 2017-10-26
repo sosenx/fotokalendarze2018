@@ -226,21 +226,6 @@
 	});
 
 })();
-// Block name: Preloader
-// Dependencies: no dependencies
-(function(){
-	var preloader = $('.js-preloader');
-	var preload = $('.js-preload-me').length;
-
-	// Check if the preloader is active
-	if(preload){
-		$(window).on("load", function () {
-			preloader.fadeOut('slow',function () {
-				$(this).remove();
-			});
-		});
-	}
-})();
 // Block name: Slider
 // Dependencies: velocity.js, owl.carousel.js
 // Docs: 
@@ -466,6 +451,21 @@
 // Docs: https://github.com/QassimHassan/YouTube_PopUp
 (function(){
 	$(".js-video").YouTubePopUp();
+})();
+// Block name: Preloader
+// Dependencies: no dependencies
+(function(){
+	var preloader = $('.js-preloader');
+	var preload = $('.js-preload-me').length;
+
+	// Check if the preloader is active
+	if(preload){
+		$(window).on("load", function () {
+			preloader.fadeOut('slow',function () {
+				$(this).remove();
+			});
+		});
+	}
 })();
 	
 })(jQuery);
