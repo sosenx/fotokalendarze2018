@@ -36,24 +36,6 @@
 		}
 	});
 })();
-// Block name: Accordion
-// Dependencies: no dependencies
-(function(){
-	$(".js-accordion").each(function() {
-		var accordion = $(this);
-		var select = {
-			title: ".accordion__title",
-			content: ".accordion__content"
-		};
-
-		var title = accordion.find(select.title);
-
-		title.on('click', function(event) {
-			event.preventDefault();
-			$(this).toggleClass('accordion__title--active').parent().find(select.content).slideToggle();
-		});
-	});
-})();
 // Block name: Carousel
 // Dependencies: owl.carousel.js
 // Docs: https://github.com/OwlCarousel2/OwlCarousel2
@@ -78,6 +60,24 @@
 		});
 	});
 
+})();
+// Block name: Accordion
+// Dependencies: no dependencies
+(function(){
+	$(".js-accordion").each(function() {
+		var accordion = $(this);
+		var select = {
+			title: ".accordion__title",
+			content: ".accordion__content"
+		};
+
+		var title = accordion.find(select.title);
+
+		title.on('click', function(event) {
+			event.preventDefault();
+			$(this).toggleClass('accordion__title--active').parent().find(select.content).slideToggle();
+		});
+	});
 })();
 // Block name: Contact Form
 // Dependencies: jquery.form-validator.js
@@ -241,6 +241,58 @@
 		});
 	}
 })();
+// Block name: Stats
+// Dependencies: jquery.animateNumber.js, jquery.inview.js
+// Docs: 
+// https://github.com/aishek/jquery-animateNumber
+// https://github.com/protonet/jquery.inview
+(function(){
+	var numbers = $('.js-stats__number');
+
+	numbers.each(function () {
+		var number = $(this);
+		var to = number.data('number');
+		var units = number.data('units') ? number.data('units') : '';
+
+		number.one("inview",function () {
+			number.animateNumber({
+				number: to,
+				numberStep: $.animateNumber.numberStepFactories.append(units)
+			}, 3000);
+		});
+	});
+})();
+// Block name: Tabs
+// Dependencies: jquery.easytabs.js, velocity.js
+// Docs: 
+// https://github.com/JangoSteve/jQuery-EasyTabs
+// https://github.com/julianshapiro/velocity
+(function(){
+	$('.js-tabs').each(function() {
+		var tabs = $(this);
+
+		tabs.easytabs({
+			tabActiveClass: "tab__title--active",
+			updateHash: false
+		});
+
+		tabs.on("easytabs:before", function () {
+			$(this).find('.tabs__content.active img').velocity("stop").velocity("transition.slideDownOut", {
+				duration: 1500,
+				display: null
+			});
+		});
+
+		tabs.on("easytabs:midTransition", function (event, $clicked, $targetPanel) {
+			$targetPanel.find('img').velocity("stop").velocity("transition.slideDownIn", {
+				duration: 1500,
+				display: null,
+				stagger: 100
+			});
+		});
+	});
+
+})();
 // Block name: Slider
 // Dependencies: velocity.js, owl.carousel.js
 // Docs: 
@@ -321,58 +373,6 @@
 			});
 		});
 	});
-})();
-// Block name: Stats
-// Dependencies: jquery.animateNumber.js, jquery.inview.js
-// Docs: 
-// https://github.com/aishek/jquery-animateNumber
-// https://github.com/protonet/jquery.inview
-(function(){
-	var numbers = $('.js-stats__number');
-
-	numbers.each(function () {
-		var number = $(this);
-		var to = number.data('number');
-		var units = number.data('units') ? number.data('units') : '';
-
-		number.one("inview",function () {
-			number.animateNumber({
-				number: to,
-				numberStep: $.animateNumber.numberStepFactories.append(units)
-			}, 3000);
-		});
-	});
-})();
-// Block name: Tabs
-// Dependencies: jquery.easytabs.js, velocity.js
-// Docs: 
-// https://github.com/JangoSteve/jQuery-EasyTabs
-// https://github.com/julianshapiro/velocity
-(function(){
-	$('.js-tabs').each(function() {
-		var tabs = $(this);
-
-		tabs.easytabs({
-			tabActiveClass: "tab__title--active",
-			updateHash: false
-		});
-
-		tabs.on("easytabs:before", function () {
-			$(this).find('.tabs__content.active img').velocity("stop").velocity("transition.slideDownOut", {
-				duration: 1500,
-				display: null
-			});
-		});
-
-		tabs.on("easytabs:midTransition", function (event, $clicked, $targetPanel) {
-			$targetPanel.find('img').velocity("stop").velocity("transition.slideDownIn", {
-				duration: 1500,
-				display: null,
-				stagger: 100
-			});
-		});
-	});
-
 })();
 // Block name: Twitter Widget
 // Dependencies: owl.carousel.js, twitterFetcher.js
