@@ -54,6 +54,31 @@
 		});
 	});
 })();
+// Block name: Carousel
+// Dependencies: owl.carousel.js
+// Docs: https://github.com/OwlCarousel2/OwlCarousel2
+(function(){
+	$(".js-carousel").each(function() {
+		var carousel = $(this);
+
+		carousel.on('initialized.owl.carousel', function() {
+			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
+		}).owlCarousel({
+			loop:true,
+			responsive: {
+				0:    { items: 3 },
+				768:  { items: 4 },
+				991:  { items: 5 },
+				1200: { items: 7 }
+			}
+		}).on("drag.owl.carousel", function() {
+			$(this).find('.has-fade').removeClass('has-fade');
+		}).on("dragged.owl.carousel", function() {
+			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
+		});
+	});
+
+})();
 // Block name: Contact Form
 // Dependencies: jquery.form-validator.js
 // Docs: https://github.com/victorjonsson/jQuery-Form-Validator
@@ -93,31 +118,6 @@
 			});
 		}
 	})();
-})();
-// Block name: Carousel
-// Dependencies: owl.carousel.js
-// Docs: https://github.com/OwlCarousel2/OwlCarousel2
-(function(){
-	$(".js-carousel").each(function() {
-		var carousel = $(this);
-
-		carousel.on('initialized.owl.carousel', function() {
-			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
-		}).owlCarousel({
-			loop:true,
-			responsive: {
-				0:    { items: 3 },
-				768:  { items: 4 },
-				991:  { items: 5 },
-				1200: { items: 7 }
-			}
-		}).on("drag.owl.carousel", function() {
-			$(this).find('.has-fade').removeClass('has-fade');
-		}).on("dragged.owl.carousel", function() {
-			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
-		});
-	});
-
 })();
 // Block name: Header
 // Dependencies: no dependencies
@@ -374,39 +374,6 @@
 	});
 
 })();
-// Block name: Testimonials
-// Dependencies: jquery.easytabs.js, velocity.js
-// Docs: 
-// https://github.com/JangoSteve/jQuery-EasyTabs
-// https://github.com/julianshapiro/velocity
-(function(){
-	$('.js-testimonials').each(function() {
-		var tabs = $(this);
-
-		// Initialize EasyTabs
-		tabs.easytabs({
-			tabActiveClass: "testimonials__title--active",
-			updateHash: false
-		});
-
-		// Bind Hide Animation
-		tabs.on("easytabs:before", function () {
-			$(this).find('.testimonials__quote.active span').velocity("stop").velocity("transition.slideDownOut", {
-				duration: 1000,
-				display: null
-			});
-		});
-
-		// Bind Show Animation
-		tabs.on("easytabs:midTransition", function (event, $clicked, $targetPanel) {
-			$targetPanel.find("span").velocity("stop").velocity("transition.slideDownIn", {
-				duration: 1000,
-				display: null
-			});
-		});
-	});
-
-})();
 // Block name: Twitter Widget
 // Dependencies: owl.carousel.js, twitterFetcher.js
 // Docs: 	
@@ -466,6 +433,39 @@
 // Docs: https://github.com/QassimHassan/YouTube_PopUp
 (function(){
 	$(".js-video").YouTubePopUp();
+})();
+// Block name: Testimonials
+// Dependencies: jquery.easytabs.js, velocity.js
+// Docs: 
+// https://github.com/JangoSteve/jQuery-EasyTabs
+// https://github.com/julianshapiro/velocity
+(function(){
+	$('.js-testimonials').each(function() {
+		var tabs = $(this);
+
+		// Initialize EasyTabs
+		tabs.easytabs({
+			tabActiveClass: "testimonials__title--active",
+			updateHash: false
+		});
+
+		// Bind Hide Animation
+		tabs.on("easytabs:before", function () {
+			$(this).find('.testimonials__quote.active span').velocity("stop").velocity("transition.slideDownOut", {
+				duration: 1000,
+				display: null
+			});
+		});
+
+		// Bind Show Animation
+		tabs.on("easytabs:midTransition", function (event, $clicked, $targetPanel) {
+			$targetPanel.find("span").velocity("stop").velocity("transition.slideDownIn", {
+				duration: 1000,
+				display: null
+			});
+		});
+	});
+
 })();
 	
 })(jQuery);

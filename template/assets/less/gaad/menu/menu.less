@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Block: Menu
+   Dependencies: jquery.superfish.less, Fontello.less
+   Docs: https://github.com/joeldbirch/superfish
+   ========================================================================== */
+
+.menu{
+	
+	
+
+
+	&__item{
+			display: inline-block;
+			vertical-align: top;
+
+			// Overriding the SuperFish styles
+			.menu > & {
+				float: none;
+			}
+
+			.menu__child &{
+				display: block;
+				padding: 0;
+			}
+
+			&--button{
+				background-color: @color__primary;
+				overflow:hidden;
+				transition: all 1s;
+
+				.menu__link{
+				color: white;
+				padding: 2px 40px 0 40px;
+				line-height: 36px;
+
+				.header--fixed &{
+					color: white;					
+				}				
+				
+				// Hover State
+				&:hover{
+					
+					background-color: @color__primary--dark;
+					text-decoration: none;
+					color: white;
+
+					.header--fixed &{
+						color: @color__primary;						
+						background-color: white;
+						border:none;					
+					}
+
+					&:after{
+						color: @color__text--light;
+					}
+				}
+
+			}
+
+		}
+	}
+	
+
+	
+		
+		
+	
+
+
+
+
+
+	&__link{
+		font-size: 1.27rem;
+
+
+
+	}
+
+}
+
+/*
+*
+		.menu__item:hover > &{
+			color: @color__primary;
+
+			&:after{
+				color: @color__primary;
+			}
+		}
+
+		// Hover State
+		&:hover{
+			text-decoration: none;
+			color: @color__primary;
+
+			&:after{
+				color: @color__primary;
+			}
+		}
+*/

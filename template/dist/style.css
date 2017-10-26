@@ -94,6 +94,10 @@ html {
 body {
   margin: 0;
 }
+body,
+html {
+  font-size: 62.5%;
+}
 /* HTML5 display definitions
    ========================================================================== */
 /**
@@ -2856,7 +2860,7 @@ blockquote {
    Link
    ========================================================================== */
 a {
-  color: #1eb858;
+  color: #0084ff;
   text-decoration: none;
   font-size: inherit;
 }
@@ -6517,7 +6521,7 @@ body.logged-in .YouTubePopUp-Wrap {
   top: 50%;
   right: -15px;
   font-size: 25px;
-  color: #abafb8;
+  color: #999999;
   margin-top: -11px;
 }
 .accordion__icon {
@@ -6564,7 +6568,7 @@ body.logged-in .YouTubePopUp-Wrap {
 .button__link {
   height: 60px;
   width: 100%;
-  background: #1eb858;
+  background: #0084ff;
   color: white;
   border: none;
   font-size: 16px;
@@ -6589,11 +6593,11 @@ body.logged-in .YouTubePopUp-Wrap {
 }
 .pricing--featured .button__input,
 .pricing--featured .button__link {
-  background: #1eb858;
+  background: #0084ff;
 }
 .button--blue .button__input,
 .button--blue .button__link {
-  background: #1c57ff;
+  background: #0055a4;
 }
 .button--transparent .button__input,
 .button--transparent .button__link {
@@ -6703,7 +6707,7 @@ body.logged-in .YouTubePopUp-Wrap {
   margin-top: -60px;
 }
 .contact-form__message span {
-  color: #1eb858;
+  color: #0084ff;
 }
 .contact-form__form {
   position: relative;
@@ -6766,7 +6770,7 @@ body.logged-in .YouTubePopUp-Wrap {
 }
 .download-button__platform {
   display: block;
-  color: #abafb8;
+  color: #999999;
   text-transform: uppercase;
   letter-spacing: 0.005em;
   margin-bottom: 10px;
@@ -6801,7 +6805,7 @@ body.logged-in .YouTubePopUp-Wrap {
   display: block;
 }
 .dropdown__icon {
-  color: #1eb858;
+  color: #0084ff;
   position: absolute;
   font-size: 22px;
   left: 15px;
@@ -6865,10 +6869,10 @@ body.logged-in .YouTubePopUp-Wrap {
   transition: color 0.25s ease;
 }
 .dropdown__item:hover {
-  color: #1eb858;
+  color: #0084ff;
 }
 .dropdown__item--active {
-  color: #1eb858;
+  color: #0084ff;
 }
 /* ==========================================================================
    Block: Error
@@ -6895,7 +6899,7 @@ body.logged-in .YouTubePopUp-Wrap {
   z-index: 10;
 }
 .error__highlight {
-  color: #1eb858;
+  color: #0084ff;
 }
 .error__image {
   width: 600px;
@@ -6971,7 +6975,7 @@ body.logged-in .YouTubePopUp-Wrap {
   left: auto;
 }
 .error__arrow {
-  color: #1eb858;
+  color: #0084ff;
   position: absolute;
   left: -25px;
   top: 0px;
@@ -7083,7 +7087,7 @@ body.logged-in .YouTubePopUp-Wrap {
   border: 2px solid #eeeeee;
 }
 .input__icon {
-  color: #1eb858;
+  color: #0084ff;
   position: absolute;
   font-size: 24px;
   left: 15px;
@@ -7206,7 +7210,7 @@ body.logged-in .YouTubePopUp-Wrap {
   transition: color 0.25s ease;
 }
 .link-list__link:hover {
-  color: #1eb858;
+  color: #0084ff;
 }
 /* ==========================================================================
    Block: List
@@ -7220,7 +7224,7 @@ body.logged-in .YouTubePopUp-Wrap {
   position: absolute;
   left: 0;
   margin-right: 8px;
-  color: #1eb858;
+  color: #0084ff;
   font-family: "fontello";
 }
 .list--boxes .list__item {
@@ -7247,7 +7251,7 @@ body.logged-in .YouTubePopUp-Wrap {
   transition: color 0.25s ease;
 }
 .header--fixed .logo__link {
-  color: #1eb858;
+  color: #0084ff;
 }
 .logo__image {
   display: block;
@@ -7292,7 +7296,7 @@ a[href^="https://maps.google.com/maps"] {
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(30, 184, 88, 0.9);
+  background-color: rgba(0, 132, 255, 0.9);
   opacity: 0;
   cursor: default;
   -webkit-transition: opacity 0.25s ease;
@@ -7461,7 +7465,7 @@ a[href^="https://maps.google.com/maps"] {
   padding: 0;
 }
 .menu__item--button {
-  border: 1px solid #5d626d;
+  border: 1px solid #4d4d4d;
   border-radius: 21px;
   -webkit-transition: background-color 0.25s ease;
   -moz-transition: background-color 0.25s ease;
@@ -7470,15 +7474,15 @@ a[href^="https://maps.google.com/maps"] {
   transition: background-color 0.25s ease;
 }
 .header--fixed .menu__item--button {
-  border-color: #1eb858;
+  border-color: #0084ff;
 }
 .menu__item--button .menu__link {
-  color: #1eb858;
+  color: #0084ff;
   padding: 2px 40px 0 40px;
   line-height: 36px;
 }
 .header--fixed .menu__item--button .menu__link {
-  color: #1eb858;
+  color: #0084ff;
 }
 .menu__link {
   font-size: 12px;
@@ -7501,7 +7505,7 @@ a[href^="https://maps.google.com/maps"] {
 .menu__link.sf-with-ul:after {
   margin-left: 5px;
   font-size: 13px;
-  color: #abafb8;
+  color: #999999;
   font-weight: 300;
   font-family: "fontello";
   position: absolute;
@@ -7531,29 +7535,29 @@ a[href^="https://maps.google.com/maps"] {
   top: 5px;
 }
 .menu__item:hover > .menu__link {
-  color: #1eb858;
+  color: #0084ff;
 }
 .menu__item:hover > .menu__link:after {
-  color: #1eb858;
+  color: #0084ff;
 }
 .menu__link:hover {
   text-decoration: none;
-  color: #1eb858;
+  color: #0084ff;
 }
 .menu__link:hover:after {
-  color: #1eb858;
+  color: #0084ff;
 }
 .menu__child .menu__link:hover {
-  color: #1eb858;
+  color: #0084ff;
 }
 .menu__child .menu__link:hover:before {
   width: 15px;
 }
 .menu__item--active > .menu__link {
-  color: #1eb858;
+  color: #0084ff;
 }
 .menu__child .menu__item--active .menu__link {
-  color: #1eb858;
+  color: #0084ff;
   position: relative;
 }
 .menu__child .menu__item--active .menu__link:before {
@@ -7563,7 +7567,7 @@ a[href^="https://maps.google.com/maps"] {
   top: 13px;
   width: 15px;
   height: 1px;
-  background-color: #1eb858;
+  background-color: #0084ff;
   left: -30px;
 }
 .menu--mobile .menu__child .menu__item--active .menu__link:before {
@@ -7625,10 +7629,10 @@ a[href^="https://maps.google.com/maps"] {
   font-size: 16px;
 }
 .mobile-menu__item:hover > .mobile-menu__link {
-  color: #1eb858;
+  color: #0084ff;
 }
 .mobile-menu__item--button .mobile-menu__link {
-  background: #1eb858;
+  background: #0084ff;
   color: white;
   text-align: center;
 }
@@ -7673,7 +7677,7 @@ a[href^="https://maps.google.com/maps"] {
 }
 .preloader__circle {
   position: absolute;
-  border: 2px dotted rgba(30, 184, 88, 0.7);
+  border: 2px dotted rgba(0, 132, 255, 0.7);
   border-radius: 50%;
   -webkit-animation: preloader 3s linear infinite;
   -moz-animation: preloader 3s linear infinite;
@@ -7686,7 +7690,7 @@ a[href^="https://maps.google.com/maps"] {
   position: absolute;
   content: '';
   display: block;
-  border-right: 1px dotted rgba(30, 184, 88, 0.7);
+  border-right: 1px dotted rgba(0, 132, 255, 0.7);
   width: 1px;
   height: 9%;
   left: 50%;
@@ -7792,7 +7796,7 @@ a[href^="https://maps.google.com/maps"] {
   margin-top: 15px;
 }
 .pricing--featured {
-  border: 3px solid #1eb858;
+  border: 3px solid #0084ff;
   margin-top: 0;
   padding: 72px 50px;
   position: relative;
@@ -7806,7 +7810,7 @@ a[href^="https://maps.google.com/maps"] {
   height: 180px;
   top: -90px;
   right: -90px;
-  background: #1eb858;
+  background: #0084ff;
   border-radius: 50%;
 }
 .pricing--featured:after {
@@ -7829,7 +7833,7 @@ a[href^="https://maps.google.com/maps"] {
 }
 .pricing__price {
   text-transform: uppercase;
-  color: #1eb858;
+  color: #0084ff;
   font-weight: 700;
   font-size: 60px;
 }
@@ -7863,7 +7867,7 @@ a[href^="https://maps.google.com/maps"] {
   text-decoration: line-through;
 }
 .pricing__highlight {
-  color: #1c57ff;
+  color: #0055a4;
   font-weight: 600;
 }
 /* ==========================================================================
@@ -7948,7 +7952,7 @@ a[href^="https://maps.google.com/maps"] {
    ========================================================================== */
 .section-subtitle {
   text-transform: uppercase;
-  color: #abafb8;
+  color: #999999;
   font-size: 14px;
   letter-spacing: 0.01em;
   margin-bottom: 40px;
@@ -7980,7 +7984,7 @@ a[href^="https://maps.google.com/maps"] {
   color: white;
 }
 .section-title__highlight {
-  color: #1eb858;
+  color: #0084ff;
 }
 /* ==========================================================================
    Block: Section
@@ -7991,10 +7995,10 @@ a[href^="https://maps.google.com/maps"] {
   position: relative;
 }
 .section--grey {
-  background-color: #f7f7f7;
+  background-color: #cccccc;
 }
 .section--blue {
-  background-color: #1c57ff;
+  background-color: #0055a4;
   padding: 115px 0;
 }
 .section--skin-1 {
@@ -8108,7 +8112,7 @@ a[href^="https://maps.google.com/maps"] {
   counter-increment: dots;
   content: "0" counter(dots);
   margin-left: 3px;
-  color: #1eb858;
+  color: #0084ff;
 }
 .slider:after {
   position: absolute;
@@ -8163,7 +8167,7 @@ a[href^="https://maps.google.com/maps"] {
   opacity: 0;
 }
 .slider__highlight {
-  color: #1eb858;
+  color: #0084ff;
 }
 @media all and (max-width: 1500px) {
   .slider .owl-dots {
@@ -8223,7 +8227,7 @@ a[href^="https://maps.google.com/maps"] {
 }
 .socials__button:hover {
   background: white;
-  color: #1eb858;
+  color: #0084ff;
 }
 /* ==========================================================================
    Block: Stats
@@ -8233,12 +8237,12 @@ a[href^="https://maps.google.com/maps"] {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
   padding: 100px 0;
-  border-top: 3px solid #1eb858;
+  border-top: 3px solid #0084ff;
   -webkit-box-shadow: 0px 1px 4px 0px rgba(221, 221, 221, 0.75);
   box-shadow: 0px 1px 4px 0px rgba(221, 221, 221, 0.75);
 }
 .stats__number {
-  color: #1eb858;
+  color: #0084ff;
   font-weight: 700;
   font-size: 60px;
   margin-bottom: 5px;
@@ -8286,7 +8290,7 @@ a[href^="https://maps.google.com/maps"] {
   width: 100%;
   bottom: 0;
   left: 0;
-  background: #1eb858;
+  background: #0084ff;
   content: '';
   height: 0;
   display: block;
@@ -8589,7 +8593,7 @@ div.video:before {
   display: block;
   content: '';
   position: absolute;
-  background-color: #1c57ff;
+  background-color: #0055a4;
   height: 100px;
   width: 100%;
   left: 0;
@@ -8667,6 +8671,19 @@ div.video:before {
   }
   .video__holder {
     max-width: 70%;
+  }
+  .slider__image {
+    width: 350px !important;
+  }
+  .slider .owl-dots {
+    margin-top: -25px;
+  }
+  .slider__secondary {
+    width: 215px !important;
+    margin-left: -339px;
+  }
+  .slider__secondary--right {
+    margin-right: -339px;
   }
 }
 @media all and (max-width: 991px) {
@@ -8769,6 +8786,12 @@ div.video:before {
   .video__secondary--right {
     right: -30px;
   }
+  .slider__secondary {
+    display: none !important;
+  }
+  .slider__slide {
+    padding-top: 50px;
+  }
 }
 @media all and (max-width: 768px) {
   .box {
@@ -8862,6 +8885,13 @@ div.video:before {
   .video__secondary--right {
     display: none;
   }
+  .slider__title {
+    padding: 0 60px;
+  }
+  .slider .owl-dots {
+    margin-top: 30px;
+    left: -5%;
+  }
 }
 @media all and (max-width: 480px) {
   .button--inline {
@@ -8896,5 +8926,235 @@ div.video:before {
   }
   .socials__item {
     margin-bottom: 20px;
+  }
+  .slider__title {
+    font-size: 20px;
+  }
+  .slider .owl-dots {
+    display: none;
+  }
+}
+/* ==========================================================================
+   GAAD Mod
+   ========================================================================== */
+/* ==========================================================================
+   Block: Download Button
+   Dependencies: no dependencies
+   ========================================================================== */
+#download .download-button {
+  max-width: 100%;
+}
+#download .download-button__description {
+  padding-top: 2rem;
+  border-top: 1px solid #cccccc;
+  margin-top: 2rem;
+  line-height: 2.3rem;
+  font-size: 1.5rem;
+  color: #14171c;
+}
+#download .download-button--big-logo {
+  padding-left: 12rem;
+}
+.logo__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo__image {
+  display: block;
+  height: auto;
+}
+/* ==========================================================================
+   Block: Menu
+   Dependencies: jquery.superfish.less, Fontello.less
+   Docs: https://github.com/joeldbirch/superfish
+   ========================================================================== */
+.menu__item {
+  display: inline-block;
+  vertical-align: top;
+}
+.menu > .menu__item {
+  float: none;
+}
+.menu__child .menu__item {
+  display: block;
+  padding: 0;
+}
+.menu__item--button {
+  background-color: #0084ff;
+  overflow: hidden;
+  transition: all 1s;
+}
+.menu__item--button .menu__link {
+  color: white;
+  padding: 2px 40px 0 40px;
+  line-height: 36px;
+}
+.header--fixed .menu__item--button .menu__link {
+  color: white;
+}
+.menu__item--button .menu__link:hover {
+  background-color: #14171c;
+  text-decoration: none;
+  color: white;
+}
+.header--fixed .menu__item--button .menu__link:hover {
+  color: #0084ff;
+  background-color: white;
+  border: none;
+}
+.menu__item--button .menu__link:hover:after {
+  color: #999999;
+}
+.menu__link {
+  font-size: 1.27rem;
+}
+/*
+*
+		.menu__item:hover > &{
+			color: @color__primary;
+
+			&:after{
+				color: @color__primary;
+			}
+		}
+
+		// Hover State
+		&:hover{
+			text-decoration: none;
+			color: @color__primary;
+
+			&:after{
+				color: @color__primary;
+			}
+		}
+*/
+/* ==========================================================================
+   Block: Slider
+   Dependencies: owl.carousel.less
+   Docs: https://github.com/OwlCarousel2/OwlCarousel2
+   ========================================================================== */
+.slider {
+  position: relative;
+}
+.slider .owl-dots {
+  position: absolute;
+  counter-reset: dots;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  left: 5%;
+  top: 50%;
+  margin-top: -115px;
+}
+.slider .owl-dots:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+.slider .owl-dots .owl-dot {
+  float: left;
+  margin-right: 30px;
+  padding-bottom: 3px;
+  position: relative;
+}
+.slider .owl-dots .owl-dot:after {
+  -webkit-transition: width 0.25s ease;
+  -moz-transition: width 0.25s ease;
+  -ms-transition: width 0.25s ease;
+  -o-transition: width 0.25s ease;
+  transition: width 0.25s ease;
+  width: 0;
+  display: block;
+  content: '';
+  position: absolute;
+  height: 2px;
+  background: #45474b;
+  bottom: 0;
+}
+.slider .owl-dots .owl-dot.active:after {
+  width: 100%;
+}
+.slider .owl-dots .owl-dot:last-child {
+  margin: 0;
+}
+.slider .owl-dots .owl-dot span:before {
+  content: "slide";
+}
+.slider .owl-dots .owl-dot span:after {
+  counter-increment: dots;
+  content: "0" counter(dots);
+  margin-left: 3px;
+  color: #0084ff;
+}
+.slider:after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 20;
+  display: block;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#66000000', GradientType=0);
+}
+.slider__slide {
+  padding-top: 85px;
+  position: relative;
+}
+.slider__image {
+  opacity: 0;
+  width: 470px !important;
+  margin: 0 auto;
+  z-index: 5;
+  position: relative;
+}
+.slider__secondary {
+  opacity: 0;
+  width: 290px !important;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -457px;
+  z-index: 1;
+  -webkit-box-shadow: 0px 2px 9px 0px rgba(0, 0, 12, 0.7);
+  box-shadow: 0px 2px 9px 0px rgba(0, 0, 12, 0.7);
+}
+.slider__secondary--right {
+  left: auto;
+  right: 50%;
+  margin-right: -457px;
+}
+.slider__title {
+  text-align: center;
+  font-size: 3.9rem;
+  color: white;
+  font-weight: 700;
+  width: 800px;
+  max-width: 100%;
+  letter-spacing: -0.01em;
+  line-height: 5.5rem;
+  opacity: 0;
+  margin: -5rem auto 8rem auto;
+  letter-spacing: .25px;
+}
+.slider__title--secline {
+  display: block;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+}
+.slider__highlight {
+  color: #0084ff;
+}
+@media all and (max-width: 1500px) {
+  .slider .owl-dots {
+    left: 0;
   }
 }
