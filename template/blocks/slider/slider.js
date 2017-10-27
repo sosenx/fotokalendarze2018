@@ -16,7 +16,7 @@
 					display: null
 				});
 
-				el.find('.owl-item.active img').velocity("stop").velocity("transition.slideDownBigOut", {
+				el.find('.owl-item.active .slider__image, .owl-item.active .slider__secondary').velocity("stop").velocity("transition.slideDownBigOut", {
 					duration: duration,
 					display: null,
 					stagger: 100
@@ -29,7 +29,7 @@
 					p: "transition.fadeIn",
 					display: null
 				},{ 
-					e: el.find('.owl-item.active img.slider__image'), 
+					e: el.find('.owl-item.active .slider__image'), 
 					p:"transition.slideUpBigIn", 
 					o: {
 						duration: duration,
@@ -38,7 +38,7 @@
 				    	sequenceQueue: false
 				    }
 				},{ 
-					e: el.find('.owl-item.active img.slider__secondary'), 
+					e: el.find('.owl-item.active .slider__secondary'), 
 				    p:"transition.slideUpBigIn", 
 				    o: {
 				    	delay: 150,
@@ -48,8 +48,8 @@
 				    	sequenceQueue: false
 				    }
 				}];
-
-				el.find(".owl-item.active .slider__title, .owl-item.active img.slider__image, .owl-item.active img.slider__secondary").velocity("stop", true);
+ 
+				el.find(".owl-item.active .slider__title, .owl-item.active .slider__image, .owl-item.active .slider__secondary").velocity("stop", true);
 				$.Velocity.RunSequence(mySequence);
 			};
 

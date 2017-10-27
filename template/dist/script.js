@@ -22615,6 +22615,21 @@ return function (global, window, document, undefined) {
 	    disableHI: true
 	});
 })();
+// Block name: Preloader
+// Dependencies: no dependencies
+(function(){
+	var preloader = $('.js-preloader');
+	var preload = $('.js-preload-me').length;
+
+	// Check if the preloader is active
+	if(preload){
+		$(window).on("load", function () {
+			preloader.fadeOut('slow',function () {
+				$(this).remove();
+			});
+		});
+	}
+})();
 // Block name: Menu Trigger
 // Dependencies: jquery.sidr.js
 // Docs: https://github.com/artberri/sidr
@@ -22631,21 +22646,6 @@ return function (global, window, document, undefined) {
 		$.sidr('close', 'sidr');
 	});
 
-})();
-// Block name: Preloader
-// Dependencies: no dependencies
-(function(){
-	var preloader = $('.js-preloader');
-	var preload = $('.js-preload-me').length;
-
-	// Check if the preloader is active
-	if(preload){
-		$(window).on("load", function () {
-			preloader.fadeOut('slow',function () {
-				$(this).remove();
-			});
-		});
-	}
 })();
 // Block name: Slider
 // Dependencies: velocity.js, owl.carousel.js
@@ -22665,7 +22665,7 @@ return function (global, window, document, undefined) {
 					display: null
 				});
 
-				el.find('.owl-item.active img').velocity("stop").velocity("transition.slideDownBigOut", {
+				el.find('.owl-item.active .slider__image, .owl-item.active .slider__secondary').velocity("stop").velocity("transition.slideDownBigOut", {
 					duration: duration,
 					display: null,
 					stagger: 100
@@ -22678,7 +22678,7 @@ return function (global, window, document, undefined) {
 					p: "transition.fadeIn",
 					display: null
 				},{ 
-					e: el.find('.owl-item.active img.slider__image'), 
+					e: el.find('.owl-item.active .slider__image'), 
 					p:"transition.slideUpBigIn", 
 					o: {
 						duration: duration,
@@ -22687,7 +22687,7 @@ return function (global, window, document, undefined) {
 				    	sequenceQueue: false
 				    }
 				},{ 
-					e: el.find('.owl-item.active img.slider__secondary'), 
+					e: el.find('.owl-item.active .slider__secondary'), 
 				    p:"transition.slideUpBigIn", 
 				    o: {
 				    	delay: 150,
@@ -22697,8 +22697,8 @@ return function (global, window, document, undefined) {
 				    	sequenceQueue: false
 				    }
 				}];
-
-				el.find(".owl-item.active .slider__title, .owl-item.active img.slider__image, .owl-item.active img.slider__secondary").velocity("stop", true);
+ 
+				el.find(".owl-item.active .slider__title, .owl-item.active .slider__image, .owl-item.active .slider__secondary").velocity("stop", true);
 				$.Velocity.RunSequence(mySequence);
 			};
 

@@ -28,7 +28,11 @@ var scripts = {
 	"blocks": [
 		folder + "assets/js/common/*.js",
 		folder + "blocks/**/*.js"
+	],
+	"gaad": [
+		folder + "assets/js/common/gaad/*.js"
 	]
+
 };
 
 // Minify Less files
@@ -52,6 +56,7 @@ gulp.task('less', function () {
                 stream: true
             }));
 });
+
 
 // Concatenate blocks scripts
 gulp.task("js:blocks", function () {
