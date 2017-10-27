@@ -61,11 +61,11 @@
 				items:1,
 				animateOut: "fadeOut",
 				dots: true,
-				mouseDrag: false,
-				touchDrag: false,
+				mouseDrag: true,
+				touchDrag: true,
 				autoHeight: true,
 				autoplay: true,
-				autoplayTimeout: 5000
+				autoplayTimeout: 3500
 			});
 
 

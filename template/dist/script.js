@@ -22615,6 +22615,23 @@ return function (global, window, document, undefined) {
 	    disableHI: true
 	});
 })();
+// Block name: Menu Trigger
+// Dependencies: jquery.sidr.js
+// Docs: https://github.com/artberri/sidr
+(function(){
+	// Initialize Sidr plugin
+	$('.js-menu-trigger').sidr({
+		side: 'right',
+		displace: false
+	});
+
+	// Close Sidr on click on menu anchors 
+	$('.js-mobile-menu__close, #sidr a').on('click', function(event) {
+		event.preventDefault();
+		$.sidr('close', 'sidr');
+	});
+
+})();
 // Block name: Preloader
 // Dependencies: no dependencies
 (function(){
@@ -22630,20 +22647,57 @@ return function (global, window, document, undefined) {
 		});
 	}
 })();
-// Block name: Menu Trigger
-// Dependencies: jquery.sidr.js
-// Docs: https://github.com/artberri/sidr
+// Block name: Stats
+// Dependencies: jquery.animateNumber.js, jquery.inview.js
+// Docs: 
+// https://github.com/aishek/jquery-animateNumber
+// https://github.com/protonet/jquery.inview
 (function(){
-	// Initialize Sidr plugin
-	$('.js-menu-trigger').sidr({
-		side: 'right',
-		displace: false
-	});
+	var numbers = $('.js-stats__number');
 
-	// Close Sidr on click on menu anchors 
-	$('.js-mobile-menu__close, #sidr a').on('click', function(event) {
-		event.preventDefault();
-		$.sidr('close', 'sidr');
+	numbers.each(function () {
+		var number = $(this);
+		var to = number.data('number');
+		var units = number.data('units') ? number.data('units') : '';
+
+		number.one("inview",function () {
+			number.animateNumber({
+				number: to,
+				numberStep: $.animateNumber.numberStepFactories.append(units)
+			}, 3000);
+		});
+	});
+})();
+// Block name: Testimonials
+// Dependencies: jquery.easytabs.js, velocity.js
+// Docs: 
+// https://github.com/JangoSteve/jQuery-EasyTabs
+// https://github.com/julianshapiro/velocity
+(function(){
+	$('.js-testimonials').each(function() {
+		var tabs = $(this);
+
+		// Initialize EasyTabs
+		tabs.easytabs({
+			tabActiveClass: "testimonials__title--active",
+			updateHash: false
+		});
+
+		// Bind Hide Animation
+		tabs.on("easytabs:before", function () {
+			$(this).find('.testimonials__quote.active span').velocity("stop").velocity("transition.slideDownOut", {
+				duration: 1000,
+				display: null
+			});
+		});
+
+		// Bind Show Animation
+		tabs.on("easytabs:midTransition", function (event, $clicked, $targetPanel) {
+			$targetPanel.find("span").velocity("stop").velocity("transition.slideDownIn", {
+				duration: 1000,
+				display: null
+			});
+		});
 	});
 
 })();
@@ -22710,11 +22764,11 @@ return function (global, window, document, undefined) {
 				items:1,
 				animateOut: "fadeOut",
 				dots: true,
-				mouseDrag: false,
-				touchDrag: false,
+				mouseDrag: true,
+				touchDrag: true,
 				autoHeight: true,
 				autoplay: true,
-				autoplayTimeout: 5000
+				autoplayTimeout: 3500
 			});
 
 
@@ -22725,27 +22779,6 @@ return function (global, window, document, undefined) {
 			slider.on("translated.owl.carousel", function() {
 				animationIn($(this));
 			});
-		});
-	});
-})();
-// Block name: Stats
-// Dependencies: jquery.animateNumber.js, jquery.inview.js
-// Docs: 
-// https://github.com/aishek/jquery-animateNumber
-// https://github.com/protonet/jquery.inview
-(function(){
-	var numbers = $('.js-stats__number');
-
-	numbers.each(function () {
-		var number = $(this);
-		var to = number.data('number');
-		var units = number.data('units') ? number.data('units') : '';
-
-		number.one("inview",function () {
-			number.animateNumber({
-				number: to,
-				numberStep: $.animateNumber.numberStepFactories.append(units)
-			}, 3000);
 		});
 	});
 })();
@@ -22775,39 +22808,6 @@ return function (global, window, document, undefined) {
 				duration: 1500,
 				display: null,
 				stagger: 100
-			});
-		});
-	});
-
-})();
-// Block name: Testimonials
-// Dependencies: jquery.easytabs.js, velocity.js
-// Docs: 
-// https://github.com/JangoSteve/jQuery-EasyTabs
-// https://github.com/julianshapiro/velocity
-(function(){
-	$('.js-testimonials').each(function() {
-		var tabs = $(this);
-
-		// Initialize EasyTabs
-		tabs.easytabs({
-			tabActiveClass: "testimonials__title--active",
-			updateHash: false
-		});
-
-		// Bind Hide Animation
-		tabs.on("easytabs:before", function () {
-			$(this).find('.testimonials__quote.active span').velocity("stop").velocity("transition.slideDownOut", {
-				duration: 1000,
-				display: null
-			});
-		});
-
-		// Bind Show Animation
-		tabs.on("easytabs:midTransition", function (event, $clicked, $targetPanel) {
-			$targetPanel.find("span").velocity("stop").velocity("transition.slideDownIn", {
-				duration: 1000,
-				display: null
 			});
 		});
 	});
