@@ -54,31 +54,6 @@
 		});
 	});
 })();
-// Block name: Carousel
-// Dependencies: owl.carousel.js
-// Docs: https://github.com/OwlCarousel2/OwlCarousel2
-(function(){
-	$(".js-carousel").each(function() {
-		var carousel = $(this);
-
-		carousel.on('initialized.owl.carousel', function() {
-			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
-		}).owlCarousel({
-			loop:true,
-			responsive: {
-				0:    { items: 3 },
-				768:  { items: 4 },
-				991:  { items: 5 },
-				1200: { items: 7 }
-			}
-		}).on("drag.owl.carousel", function() {
-			$(this).find('.has-fade').removeClass('has-fade');
-		}).on("dragged.owl.carousel", function() {
-			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
-		});
-	});
-
-})();
 // Block name: Contact Form
 // Dependencies: jquery.form-validator.js
 // Docs: https://github.com/victorjonsson/jQuery-Form-Validator
@@ -147,6 +122,44 @@
 	});
 
 })();
+// Block name: Carousel
+// Dependencies: owl.carousel.js
+// Docs: https://github.com/OwlCarousel2/OwlCarousel2
+(function(){
+	$(".js-carousel").each(function() {
+		var carousel = $(this);
+
+		carousel.on('initialized.owl.carousel', function() {
+			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
+		}).owlCarousel({
+			loop:true,
+			responsive: {
+				0:    { items: 3 },
+				768:  { items: 4 },
+				991:  { items: 5 },
+				1200: { items: 7 }
+			}
+		}).on("drag.owl.carousel", function() {
+			$(this).find('.has-fade').removeClass('has-fade');
+		}).on("dragged.owl.carousel", function() {
+			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
+		});
+	});
+
+})();
+// Block name: Menu
+// Dependencies: jquery.hoverIntent.js jquery.superfish.js
+// Docs: https://github.com/joeldbirch/superfish
+(function(){
+	var menu = $('.js-menu');
+
+	menu.superfish({
+		delay: 300,
+	    autoArrows: false,
+	    speed: 'fast',
+	    disableHI: true
+	});
+})();
 // Block name: Map
 // Dependencies: Google Maps API
 // Docs: https://developers.google.com/maps/
@@ -196,35 +209,20 @@
 
 	google.maps.event.addDomListener(window, "load", initialize);
 })();
-// Block name: Menu
-// Dependencies: jquery.hoverIntent.js jquery.superfish.js
-// Docs: https://github.com/joeldbirch/superfish
+// Block name: Preloader
+// Dependencies: no dependencies
 (function(){
-	var menu = $('.js-menu');
+	var preloader = $('.js-preloader');
+	var preload = $('.js-preload-me').length;
 
-	menu.superfish({
-		delay: 300,
-	    autoArrows: false,
-	    speed: 'fast',
-	    disableHI: true
-	});
-})();
-// Block name: Menu Trigger
-// Dependencies: jquery.sidr.js
-// Docs: https://github.com/artberri/sidr
-(function(){
-	// Initialize Sidr plugin
-	$('.js-menu-trigger').sidr({
-		side: 'right',
-		displace: false
-	});
-
-	// Close Sidr on click on menu anchors 
-	$('.js-mobile-menu__close, #sidr a').on('click', function(event) {
-		event.preventDefault();
-		$.sidr('close', 'sidr');
-	});
-
+	// Check if the preloader is active
+	if(preload){
+		$(window).on("load", function () {
+			preloader.fadeOut('slow',function () {
+				$(this).remove();
+			});
+		});
+	}
 })();
 // Block name: Slider
 // Dependencies: velocity.js, owl.carousel.js
@@ -307,27 +305,6 @@
 		});
 	});
 })();
-// Block name: Stats
-// Dependencies: jquery.animateNumber.js, jquery.inview.js
-// Docs: 
-// https://github.com/aishek/jquery-animateNumber
-// https://github.com/protonet/jquery.inview
-(function(){
-	var numbers = $('.js-stats__number');
-
-	numbers.each(function () {
-		var number = $(this);
-		var to = number.data('number');
-		var units = number.data('units') ? number.data('units') : '';
-
-		number.one("inview",function () {
-			number.animateNumber({
-				number: to,
-				numberStep: $.animateNumber.numberStepFactories.append(units)
-			}, 3000);
-		});
-	});
-})();
 // Block name: Tabs
 // Dependencies: jquery.easytabs.js, velocity.js
 // Docs: 
@@ -392,6 +369,23 @@
 	});
 
 })();
+// Block name: Menu Trigger
+// Dependencies: jquery.sidr.js
+// Docs: https://github.com/artberri/sidr
+(function(){
+	// Initialize Sidr plugin
+	$('.js-menu-trigger').sidr({
+		side: 'right',
+		displace: false
+	});
+
+	// Close Sidr on click on menu anchors 
+	$('.js-mobile-menu__close, #sidr a').on('click', function(event) {
+		event.preventDefault();
+		$.sidr('close', 'sidr');
+	});
+
+})();
 // Block name: Twitter Widget
 // Dependencies: owl.carousel.js, twitterFetcher.js
 // Docs: 	
@@ -452,20 +446,26 @@
 (function(){
 	$(".js-video").YouTubePopUp();
 })();
-// Block name: Preloader
-// Dependencies: no dependencies
+// Block name: Stats
+// Dependencies: jquery.animateNumber.js, jquery.inview.js
+// Docs: 
+// https://github.com/aishek/jquery-animateNumber
+// https://github.com/protonet/jquery.inview
 (function(){
-	var preloader = $('.js-preloader');
-	var preload = $('.js-preload-me').length;
+	var numbers = $('.js-stats__number');
 
-	// Check if the preloader is active
-	if(preload){
-		$(window).on("load", function () {
-			preloader.fadeOut('slow',function () {
-				$(this).remove();
-			});
+	numbers.each(function () {
+		var number = $(this);
+		var to = number.data('number');
+		var units = number.data('units') ? number.data('units') : '';
+
+		number.one("inview",function () {
+			number.animateNumber({
+				number: to,
+				numberStep: $.animateNumber.numberStepFactories.append(units)
+			}, 3000);
 		});
-	}
+	});
 })();
 	
 })(jQuery);
