@@ -22647,60 +22647,6 @@ return function (global, window, document, undefined) {
 		});
 	}
 })();
-// Block name: Stats
-// Dependencies: jquery.animateNumber.js, jquery.inview.js
-// Docs: 
-// https://github.com/aishek/jquery-animateNumber
-// https://github.com/protonet/jquery.inview
-(function(){
-	var numbers = $('.js-stats__number');
-
-	numbers.each(function () {
-		var number = $(this);
-		var to = number.data('number');
-		var units = number.data('units') ? number.data('units') : '';
-
-		number.one("inview",function () {
-			number.animateNumber({
-				number: to,
-				numberStep: $.animateNumber.numberStepFactories.append(units)
-			}, 3000);
-		});
-	});
-})();
-// Block name: Testimonials
-// Dependencies: jquery.easytabs.js, velocity.js
-// Docs: 
-// https://github.com/JangoSteve/jQuery-EasyTabs
-// https://github.com/julianshapiro/velocity
-(function(){
-	$('.js-testimonials').each(function() {
-		var tabs = $(this);
-
-		// Initialize EasyTabs
-		tabs.easytabs({
-			tabActiveClass: "testimonials__title--active",
-			updateHash: false
-		});
-
-		// Bind Hide Animation
-		tabs.on("easytabs:before", function () {
-			$(this).find('.testimonials__quote.active span').velocity("stop").velocity("transition.slideDownOut", {
-				duration: 1000,
-				display: null
-			});
-		});
-
-		// Bind Show Animation
-		tabs.on("easytabs:midTransition", function (event, $clicked, $targetPanel) {
-			$targetPanel.find("span").velocity("stop").velocity("transition.slideDownIn", {
-				duration: 1000,
-				display: null
-			});
-		});
-	});
-
-})();
 // Block name: Slider
 // Dependencies: velocity.js, owl.carousel.js
 // Docs: 
@@ -22782,6 +22728,27 @@ return function (global, window, document, undefined) {
 		});
 	});
 })();
+// Block name: Stats
+// Dependencies: jquery.animateNumber.js, jquery.inview.js
+// Docs: 
+// https://github.com/aishek/jquery-animateNumber
+// https://github.com/protonet/jquery.inview
+(function(){
+	var numbers = $('.js-stats__number');
+
+	numbers.each(function () {
+		var number = $(this);
+		var to = number.data('number');
+		var units = number.data('units') ? number.data('units') : '';
+
+		number.one("inview",function () {
+			number.animateNumber({
+				number: to,
+				numberStep: $.animateNumber.numberStepFactories.append(units)
+			}, 3000);
+		});
+	});
+})();
 // Block name: Tabs
 // Dependencies: jquery.easytabs.js, velocity.js
 // Docs: 
@@ -22808,6 +22775,39 @@ return function (global, window, document, undefined) {
 				duration: 1500,
 				display: null,
 				stagger: 100
+			});
+		});
+	});
+
+})();
+// Block name: Testimonials
+// Dependencies: jquery.easytabs.js, velocity.js
+// Docs: 
+// https://github.com/JangoSteve/jQuery-EasyTabs
+// https://github.com/julianshapiro/velocity
+(function(){
+	$('.js-testimonials').each(function() {
+		var tabs = $(this);
+
+		// Initialize EasyTabs
+		tabs.easytabs({
+			tabActiveClass: "testimonials__title--active",
+			updateHash: false
+		});
+
+		// Bind Hide Animation
+		tabs.on("easytabs:before", function () {
+			$(this).find('.testimonials__quote.active span').velocity("stop").velocity("transition.slideDownOut", {
+				duration: 1000,
+				display: null
+			});
+		});
+
+		// Bind Show Animation
+		tabs.on("easytabs:midTransition", function (event, $clicked, $targetPanel) {
+			$targetPanel.find("span").velocity("stop").velocity("transition.slideDownIn", {
+				duration: 1000,
+				display: null
 			});
 		});
 	});
