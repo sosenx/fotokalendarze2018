@@ -8692,6 +8692,15 @@ div.video:before {
   .hero--skin-2 {
     padding-bottom: 200px;
   }
+  .tabs {
+    padding: 0;
+  }
+  .tabs__izometric {
+    display: none;
+  }
+  .tabs__regular {
+    display: block;
+  }
 }
 @media all and (max-width: 991px) {
   .device--right {
@@ -8904,6 +8913,10 @@ div.video:before {
   .slider .owl-dots {
     margin-top: 30px;
     left: -5%;
+  }
+  .tabs__title {
+    width: 100%;
+    text-indent: -50px;
   }
 }
 @media all and (max-width: 480px) {
@@ -9263,6 +9276,139 @@ div.video:before {
 }
 .hero--center {
   text-align: center;
+}
+/* ==========================================================================
+   Block: Tabs
+   Dependencies: no dependencies
+   ========================================================================== */
+.tabs {
+  text-align: center;
+  padding-bottom: 40%;
+}
+.tabs__header {
+  display: inline-block;
+  vertical-align: top;
+  background-color: #14171c;
+  margin-bottom: 100px;
+  -webkit-box-shadow: 0px 4px 20px 0px rgba(149, 149, 149, 0.75);
+  box-shadow: 0px 4px 20px 0px rgba(149, 149, 149, 0.75);
+}
+.tabs__header:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+.tabs__title {
+  float: left;
+  position: relative;
+}
+.tabs__title:after {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: #0084ff;
+  content: '';
+  height: 0;
+  display: block;
+  -webkit-transition: height 0.25s ease;
+  -moz-transition: height 0.25s ease;
+  -ms-transition: height 0.25s ease;
+  -o-transition: height 0.25s ease;
+  transition: height 0.25s ease;
+}
+.tabs__title.tab__title--active:after {
+  height: 3px;
+}
+.tabs__link {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: white;
+  line-height: 75px;
+  padding-left: 75px;
+  padding-right: 25px;
+  display: block;
+}
+.tabs__icon {
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  left: 30px;
+  height: 30px;
+}
+.tabs__content {
+  position: relative;
+}
+.tabs__izometric .tabs__screenshot {
+  position: absolute;
+  max-width: 500px;
+  backface-visibility: hidden;
+}
+.tabs__izometric .tabs__screenshot:nth-child(1) {
+  left: -30px;
+}
+.tabs__izometric .tabs__screenshot:nth-child(2) {
+  left: 370px;
+}
+.tabs__izometric .tabs__screenshot:nth-child(3) {
+  left: 770px;
+}
+.tabs__izometric .tabs__screenshot:nth-child(4) {
+  left: -80px;
+  top: 30rem;
+}
+.tabs__izometric .tabs__screenshot:nth-child(5) {
+  left: 310px;
+  top: 30rem;
+}
+.tabs__izometric .tabs__screenshot:nth-child(6) {
+  left: 700px;
+  top: 30rem;
+}
+.tabs__regular {
+  display: none;
+}
+.tabs__regular .tabs__screenshot {
+  width: 80%;
+  margin: 0 auto 50px auto;
+  -webkit-box-shadow: 0px 5px 20px 0px rgba(205, 205, 205, 0.7);
+  box-shadow: 0px 5px 20px 0px rgba(205, 205, 205, 0.7);
+}
+@media all and (max-width: 1500px) {
+  .tabs__izometric .tabs__screenshot {
+    max-width: 400px;
+  }
+  .tabs__izometric .tabs__screenshot:nth-child(1) {
+    left: 70px;
+  }
+  .tabs__izometric .tabs__screenshot:nth-child(2) {
+    left: 370px;
+  }
+  .tabs__izometric .tabs__screenshot:nth-child(3) {
+    left: 670px;
+  }
+  .tabs__izometric .tabs__screenshot:nth-child(4) {
+    left: 40px;
+    top: 130px;
+  }
+  .tabs__izometric .tabs__screenshot:nth-child(5) {
+    left: 330px;
+    top: 130px;
+  }
+  .tabs__izometric .tabs__screenshot:nth-child(6) {
+    left: 620px;
+    top: 130px;
+  }
+}
+#screenshots {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+#screenshots .section-subtitle:last-of-type {
+  color: #000000;
+  margin-top: 20rem;
+  margin-bottom: 0;
+  font-size: 1.6rem;
 }
 #download {
   background-image: url('/assets/img/common/gaad/downloads-bg.jpg');

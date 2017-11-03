@@ -22485,46 +22485,6 @@ return function (global, window, document, undefined) {
 	});
 
 })();
-// Block name: Contact Form
-// Dependencies: jquery.form-validator.js
-// Docs: https://github.com/victorjonsson/jQuery-Form-Validator
-(function(){
-	(function(){
-		var form = $('.js-contact-form');
-
-		if(form.length){
-			var submitForm = function ($form) {
-				var formURL = $form.attr("action"); // Get the form's action
-				var postData = $form.serialize(); // Serialize the form's data
-				var successMessage = $('.js-contact-form__modal'); // Select the success modal
-
-				// Submit an AJAX request
-				$.ajax({
-				    url : formURL,
-				    type: "POST",
-				    data : postData,
-				    success:function() {
-				    	// On success clear the data from the inputs
-				    	$form.find('input:text, textarea').val(''); 
-				    	// Show the success modal for 2 seconds
-				    	successMessage.fadeIn().delay(2000).fadeOut();
-				    }
-				});
-
-				// Prevent form default behavior
-				return false;
-			};
-
-			// Validate the contact form, if succeeded, call the submitForm function
-			$.validate({
-		  		form : form,
-		  		onSuccess: submitForm,
-		  		errorElementClass: "has-error",
-		  		scrollToTopOnError: false
-			});
-		}
-	})();
-})();
 // Block name: Header
 // Dependencies: no dependencies
 // Docs: 
@@ -22552,6 +22512,19 @@ return function (global, window, document, undefined) {
 		updateHeader();
 	});
 
+})();
+// Block name: Menu
+// Dependencies: jquery.hoverIntent.js jquery.superfish.js
+// Docs: https://github.com/joeldbirch/superfish
+(function(){
+	var menu = $('.js-menu');
+
+	menu.superfish({
+		delay: 300,
+	    autoArrows: false,
+	    speed: 'fast',
+	    disableHI: true
+	});
 })();
 // Block name: Map
 // Dependencies: Google Maps API
@@ -22601,19 +22574,6 @@ return function (global, window, document, undefined) {
 	};
 
 	google.maps.event.addDomListener(window, "load", initialize);
-})();
-// Block name: Menu
-// Dependencies: jquery.hoverIntent.js jquery.superfish.js
-// Docs: https://github.com/joeldbirch/superfish
-(function(){
-	var menu = $('.js-menu');
-
-	menu.superfish({
-		delay: 300,
-	    autoArrows: false,
-	    speed: 'fast',
-	    disableHI: true
-	});
 })();
 // Block name: Menu Trigger
 // Dependencies: jquery.sidr.js
@@ -22780,45 +22740,6 @@ return function (global, window, document, undefined) {
 	});
 
 })();
-// Block name: Video
-// Dependencies: jquery.youtubepopup.js
-// Docs: https://github.com/QassimHassan/YouTube_PopUp
-(function(){
-	$(".js-video").YouTubePopUp();
-})();
-// Block name: Testimonials
-// Dependencies: jquery.easytabs.js, velocity.js
-// Docs: 
-// https://github.com/JangoSteve/jQuery-EasyTabs
-// https://github.com/julianshapiro/velocity
-(function(){
-	$('.js-testimonials').each(function() {
-		var tabs = $(this);
-
-		// Initialize EasyTabs
-		tabs.easytabs({
-			tabActiveClass: "testimonials__title--active",
-			updateHash: false
-		});
-
-		// Bind Hide Animation
-		tabs.on("easytabs:before", function () {
-			$(this).find('.testimonials__quote.active span').velocity("stop").velocity("transition.slideDownOut", {
-				duration: 1000,
-				display: null
-			});
-		});
-
-		// Bind Show Animation
-		tabs.on("easytabs:midTransition", function (event, $clicked, $targetPanel) {
-			$targetPanel.find("span").velocity("stop").velocity("transition.slideDownIn", {
-				duration: 1000,
-				display: null
-			});
-		});
-	});
-
-})();
 // Block name: Twitter Widget
 // Dependencies: owl.carousel.js, twitterFetcher.js
 // Docs: 	
@@ -22872,6 +22793,85 @@ return function (global, window, document, undefined) {
 		"customCallback": handleTweets,
 		"lang": apiConfig.lang
 	});
+})();
+// Block name: Testimonials
+// Dependencies: jquery.easytabs.js, velocity.js
+// Docs: 
+// https://github.com/JangoSteve/jQuery-EasyTabs
+// https://github.com/julianshapiro/velocity
+(function(){
+	$('.js-testimonials').each(function() {
+		var tabs = $(this);
+
+		// Initialize EasyTabs
+		tabs.easytabs({
+			tabActiveClass: "testimonials__title--active",
+			updateHash: false
+		});
+
+		// Bind Hide Animation
+		tabs.on("easytabs:before", function () {
+			$(this).find('.testimonials__quote.active span').velocity("stop").velocity("transition.slideDownOut", {
+				duration: 1000,
+				display: null
+			});
+		});
+
+		// Bind Show Animation
+		tabs.on("easytabs:midTransition", function (event, $clicked, $targetPanel) {
+			$targetPanel.find("span").velocity("stop").velocity("transition.slideDownIn", {
+				duration: 1000,
+				display: null
+			});
+		});
+	});
+
+})();
+// Block name: Video
+// Dependencies: jquery.youtubepopup.js
+// Docs: https://github.com/QassimHassan/YouTube_PopUp
+(function(){
+	$(".js-video").YouTubePopUp();
+})();
+// Block name: Contact Form
+// Dependencies: jquery.form-validator.js
+// Docs: https://github.com/victorjonsson/jQuery-Form-Validator
+(function(){
+	(function(){
+		var form = $('.js-contact-form');
+
+		if(form.length){
+			var submitForm = function ($form) {
+				var formURL = $form.attr("action"); // Get the form's action
+				var postData = $form.serialize(); // Serialize the form's data
+				var successMessage = $('.js-contact-form__modal'); // Select the success modal
+
+				// Submit an AJAX request
+				$.ajax({
+				    url : formURL,
+				    type: "POST",
+				    data : postData,
+				    success:function() {
+				    	// On success clear the data from the inputs
+				    	$form.find('input:text, textarea').val(''); 
+				    	// Show the success modal for 2 seconds
+				    	successMessage.fadeIn().delay(2000).fadeOut();
+				    }
+				});
+
+				// Prevent form default behavior
+				return false;
+			};
+
+			// Validate the contact form, if succeeded, call the submitForm function
+			$.validate({
+		  		form : form,
+		  		onSuccess: submitForm,
+		  		errorElementClass: "has-error",
+		  		scrollToTopOnError: false
+			});
+		}
+	})();
 })();
 	
 })(jQuery);
