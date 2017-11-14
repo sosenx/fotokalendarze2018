@@ -22442,23 +22442,30 @@ return function (global, window, document, undefined) {
 		}
 	});
 })();
-// Block name: Accordion
-// Dependencies: no dependencies
+// Block name: Carousel
+// Dependencies: owl.carousel.js
+// Docs: https://github.com/OwlCarousel2/OwlCarousel2
 (function(){
-	$(".js-accordion").each(function() {
-		var accordion = $(this);
-		var select = {
-			title: ".accordion__title",
-			content: ".accordion__content"
-		};
+	$(".js-carousel").each(function() {
+		var carousel = $(this);
 
-		var title = accordion.find(select.title);
-
-		title.on('click', function(event) {
-			event.preventDefault();
-			$(this).toggleClass('accordion__title--active').parent().find(select.content).slideToggle();
+		carousel.on('initialized.owl.carousel', function() {
+			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
+		}).owlCarousel({
+			loop:true,
+			responsive: {
+				0:    { items: 3 },
+				768:  { items: 4 },
+				991:  { items: 5 },
+				1200: { items: 7 }
+			}
+		}).on("drag.owl.carousel", function() {
+			$(this).find('.has-fade').removeClass('has-fade');
+		}).on("dragged.owl.carousel", function() {
+			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
 		});
 	});
+
 })();
 // Block name: Contact Form
 // Dependencies: jquery.form-validator.js
@@ -22500,31 +22507,6 @@ return function (global, window, document, undefined) {
 		}
 	})();
 })();
-// Block name: Carousel
-// Dependencies: owl.carousel.js
-// Docs: https://github.com/OwlCarousel2/OwlCarousel2
-(function(){
-	$(".js-carousel").each(function() {
-		var carousel = $(this);
-
-		carousel.on('initialized.owl.carousel', function() {
-			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
-		}).owlCarousel({
-			loop:true,
-			responsive: {
-				0:    { items: 3 },
-				768:  { items: 4 },
-				991:  { items: 5 },
-				1200: { items: 7 }
-			}
-		}).on("drag.owl.carousel", function() {
-			$(this).find('.has-fade').removeClass('has-fade');
-		}).on("dragged.owl.carousel", function() {
-			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
-		});
-	});
-
-})();
 // Block name: Header
 // Dependencies: no dependencies
 // Docs: 
@@ -22553,6 +22535,24 @@ return function (global, window, document, undefined) {
 	});
 
 })();
+// Block name: Accordion
+// Dependencies: no dependencies
+(function(){
+	$(".js-accordion").each(function() {
+		var accordion = $(this);
+		var select = {
+			title: ".accordion__title",
+			content: ".accordion__content"
+		};
+
+		var title = accordion.find(select.title);
+
+		title.on('click', function(event) {
+			event.preventDefault();
+			$(this).toggleClass('accordion__title--active').parent().find(select.content).slideToggle();
+		});
+	});
+})();
 // Block name: Map
 // Dependencies: Google Maps API
 // Docs: https://developers.google.com/maps/
@@ -22561,7 +22561,143 @@ return function (global, window, document, undefined) {
 		if($('#map').length){
 			var	mapBlock = document.getElementById('map');
 			var myLatlng = new google.maps.LatLng($(mapBlock).data('lon'), $(mapBlock).data('lat'));
-			var mapStyle = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}];
+			var mapStyle = [
+    {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 13
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#144b53"
+            },
+            {
+                "lightness": 14
+            },
+            {
+                "weight": 1.4
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#08304b"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#0c4152"
+            },
+            {
+                "lightness": 5
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#0b434f"
+            },
+            {
+                "lightness": 25
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#0b3d51"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#146474"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#021019"
+            }
+        ]
+    }
+];
 			
 			var	mapOptions = {
 		      	zoom: 15,
@@ -22631,6 +22767,21 @@ return function (global, window, document, undefined) {
 		$.sidr('close', 'sidr');
 	});
 
+})();
+// Block name: Preloader
+// Dependencies: no dependencies
+(function(){
+	var preloader = $('.js-preloader');
+	var preload = $('.js-preload-me').length;
+
+	// Check if the preloader is active
+	if(preload){
+		$(window).on("load", function () {
+			preloader.fadeOut('slow',function () {
+				$(this).remove();
+			});
+		});
+	}
 })();
 // Block name: Slider
 // Dependencies: velocity.js, owl.carousel.js
@@ -22712,21 +22863,6 @@ return function (global, window, document, undefined) {
 			});
 		});
 	});
-})();
-// Block name: Preloader
-// Dependencies: no dependencies
-(function(){
-	var preloader = $('.js-preloader');
-	var preload = $('.js-preload-me').length;
-
-	// Check if the preloader is active
-	if(preload){
-		$(window).on("load", function () {
-			preloader.fadeOut('slow',function () {
-				$(this).remove();
-			});
-		});
-	}
 })();
 // Block name: Stats
 // Dependencies: jquery.animateNumber.js, jquery.inview.js
