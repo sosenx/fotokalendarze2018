@@ -9400,6 +9400,72 @@ div.video:before {
     top: 130px;
   }
 }
+/* ==========================================================================
+   Block: Pricing
+   Dependencies: Fontello.less
+   ========================================================================== */
+.pricing {
+  padding: 0;
+  box-shadow: 0px 5px 20px 0px #696969;
+  margin-top: 0 !important;
+}
+.pricing__title {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 2.5rem;
+}
+.pricing__placeholder {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pricing__placeholder > * {
+  position: relative !important;
+  top: unset !important;
+  left: unset !important;
+  right: unset !important;
+  bottom: unset !important;
+}
+.pricing__placeholder:after {
+  content: '';
+  position: absolute;
+  left: 10%;
+  border-bottom: 1px solid #999;
+  width: 80%;
+  height: 1px;
+  background-color: transparent;
+  bottom: -1rem;
+}
+.pricing__price {
+  font-size: 5rem;
+}
+.pricing__currency {
+  font-size: 2rem;
+  padding-left: 1.5rem;
+  transform: translate(-1rem, 0.7rem);
+}
+.pricing__frequency {
+  font-size: 3rem;
+  padding-right: 1.5rem;
+  font-weight: bold;
+  color: #666;
+}
+.pricing__feature {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.pricing__highlight:before {
+  content: '-';
+  padding-right: .5rem;
+  padding-left: .5rem;
+}
 #screenshots {
   padding-bottom: 0;
   margin-bottom: 0;
@@ -9407,6 +9473,9 @@ div.video:before {
 #screenshots .section-subtitle:last-of-type {
   color: #000000;
   margin-top: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
   margin-bottom: 0;
   font-size: 1.6rem;
 }

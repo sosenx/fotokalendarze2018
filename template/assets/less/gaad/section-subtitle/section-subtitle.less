@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Block: Section Subtitle
+   Dependencies: no dependencies
+   ========================================================================== */
+
+.section-subtitle{
+
+	text-transform: uppercase;
+	color: @color__text--light;
+	font-size: 14px;
+	letter-spacing: 0.01em;
+	margin-bottom: 40px;
+
+	&--wide{
+		width: 100%;
+		text-align: center;
+	}
+
+	&--important{
+		color: @color__text; 
+	}
+}
+
+.media-mixin(@break) when (@break = @break-medium) {
+	.section-subtitle{
+		text-align: center;
+	}
+}
