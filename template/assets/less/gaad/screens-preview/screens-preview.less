@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Block: Screens Preview
+   Dependencies: no dependencies
+   ========================================================================== */
+
+.screens-preview{
+	border: none;
+
+	&--right{
+	
+	}
+
+	&__primary{
+		box-shadow: none;
+	}
+
+	&__secondary{
+		
+
+		.screens-preview--right &{
+			
+		}
+	}
+}
+
+.media-mixin(@break) when (@break = @break-medium) {
+	.screens-preview{
+		
+
+		&__secondary{
+			
+		}
+
+		&--right{
+			
+
+			.screens-preview__secondary{
+				
+			}
+
+		}
+	}
+}
+
+.media-mixin(@break) when (@break = @break-small) {
+	.screens-preview{
+		
+
+		&--right{
+			
+
+			.screens-preview__secondary{
+				
+			}
+		}
+
+		&__secondary{
+			
+		}
+	}
+}

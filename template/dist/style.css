@@ -8701,6 +8701,9 @@ div.video:before {
   .tabs__regular {
     display: block;
   }
+  .member {
+    margin-bottom: 60px;
+  }
 }
 @media all and (max-width: 991px) {
   .device--right {
@@ -8813,6 +8816,9 @@ div.video:before {
   }
   .hero--skin-2 {
     padding-bottom: 150px;
+  }
+  .section-subtitle {
+    text-align: center;
   }
 }
 @media all and (max-width: 768px) {
@@ -9466,6 +9472,139 @@ div.video:before {
   padding-right: .5rem;
   padding-left: .5rem;
 }
+/* ==========================================================================
+   Block: Screens Preview
+   Dependencies: no dependencies
+   ========================================================================== */
+.screens-preview {
+  border: none;
+}
+.screens-preview__primary {
+  box-shadow: none;
+}
+/* ==========================================================================
+   Block: Accordion
+   Dependencies: no dependencies
+   ========================================================================== */
+.accordion__title {
+  font-weight: bold;
+}
+/* ==========================================================================
+   Block: Member
+   Dependencies: Fontello.less
+   ========================================================================== */
+.member {
+  text-align: center;
+}
+.member__photo-wrapper {
+  position: relative;
+  margin-bottom: 25px;
+}
+.member__cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 132, 255, 0.9);
+  opacity: 0;
+  cursor: default;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  -ms-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+.member__photo-wrapper:hover .member__cover {
+  opacity: 1;
+}
+.member__socials {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.member__social {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  margin: 0 10px;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(221, 221, 221, 0.75);
+  box-shadow: 0px 1px 4px 0px rgba(221, 221, 221, 0.75);
+  -webkit-transition: box-shadow 0.25s ease;
+  -moz-transition: box-shadow 0.25s ease;
+  -ms-transition: box-shadow 0.25s ease;
+  -o-transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+}
+.member__social:hover {
+  -webkit-box-shadow: 0px 1px 10px 0px rgba(221, 221, 221, 0.75);
+  box-shadow: 0px 1px 10px 0px rgba(221, 221, 221, 0.75);
+}
+.member__link {
+  display: block;
+}
+.member__name {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.member__position {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+}
+.member__quote {
+  color: white;
+  border: 0;
+  padding: 90px 25px 0 25px;
+  font-style: normal;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+}
+.member__quote:before {
+  content: open-quote;
+  position: absolute;
+  opacity: 0;
+}
+.member__quote:after {
+  content: close-quote;
+  font-family: 'Poppins', sans-serif;
+  font-size: 55px;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  margin-left: -11px;
+}
+/* ==========================================================================
+   Block: Section Subtitle
+   Dependencies: no dependencies
+   ========================================================================== */
+.section-subtitle {
+  text-transform: uppercase;
+  color: #999999;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  margin-bottom: 40px;
+}
+.section-subtitle--wide {
+  color: #303030;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.section-subtitle--primary-color {
+  color: #0084ff;
+}
+.section-subtitle--important {
+  color: #000000;
+}
+#features {
+  padding-bottom: 0;
+}
 #screenshots {
   padding-bottom: 0;
   margin-bottom: 0;
@@ -9480,7 +9619,7 @@ div.video:before {
   font-size: 1.6rem;
 }
 #download {
-  background-image: url('/assets/img/common/gaad/downloads-bg.jpg');
+  tbackground-image: url('/assets/img/common/gaad/downloads-bg.jpg');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;

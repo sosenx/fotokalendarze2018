@@ -22460,31 +22460,6 @@ return function (global, window, document, undefined) {
 		});
 	});
 })();
-// Block name: Carousel
-// Dependencies: owl.carousel.js
-// Docs: https://github.com/OwlCarousel2/OwlCarousel2
-(function(){
-	$(".js-carousel").each(function() {
-		var carousel = $(this);
-
-		carousel.on('initialized.owl.carousel', function() {
-			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
-		}).owlCarousel({
-			loop:true,
-			responsive: {
-				0:    { items: 3 },
-				768:  { items: 4 },
-				991:  { items: 5 },
-				1200: { items: 7 }
-			}
-		}).on("drag.owl.carousel", function() {
-			$(this).find('.has-fade').removeClass('has-fade');
-		}).on("dragged.owl.carousel", function() {
-			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
-		});
-	});
-
-})();
 // Block name: Contact Form
 // Dependencies: jquery.form-validator.js
 // Docs: https://github.com/victorjonsson/jQuery-Form-Validator
@@ -22524,6 +22499,59 @@ return function (global, window, document, undefined) {
 			});
 		}
 	})();
+})();
+// Block name: Carousel
+// Dependencies: owl.carousel.js
+// Docs: https://github.com/OwlCarousel2/OwlCarousel2
+(function(){
+	$(".js-carousel").each(function() {
+		var carousel = $(this);
+
+		carousel.on('initialized.owl.carousel', function() {
+			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
+		}).owlCarousel({
+			loop:true,
+			responsive: {
+				0:    { items: 3 },
+				768:  { items: 4 },
+				991:  { items: 5 },
+				1200: { items: 7 }
+			}
+		}).on("drag.owl.carousel", function() {
+			$(this).find('.has-fade').removeClass('has-fade');
+		}).on("dragged.owl.carousel", function() {
+			$(this).find('.owl-item.active:first, .owl-item.active:last').addClass('has-fade');
+		});
+	});
+
+})();
+// Block name: Header
+// Dependencies: no dependencies
+// Docs: 
+(function(){
+	var header = $(".js-header").first();
+	var logo = header.find('.js-logo__image');
+
+	var updateHeader = function() {
+		if($(window).scrollTop() === 0){
+			header.removeClass('header--fixed');
+			if (logo.data('switch') === true) {
+				logo.attr("src","assets/img/common/logo/logo.png");
+			}
+		}else{
+			header.addClass('header--fixed');
+			if (logo.data('switch') === true) {
+				logo.attr("src","assets/img/common/logo/logo-dark.png");
+			}
+		}
+	};
+
+	if (header.length) { updateHeader(); }
+
+	$(window).scroll(function () {
+		updateHeader();
+	});
+
 })();
 // Block name: Map
 // Dependencies: Google Maps API
@@ -22603,21 +22631,6 @@ return function (global, window, document, undefined) {
 		$.sidr('close', 'sidr');
 	});
 
-})();
-// Block name: Preloader
-// Dependencies: no dependencies
-(function(){
-	var preloader = $('.js-preloader');
-	var preload = $('.js-preload-me').length;
-
-	// Check if the preloader is active
-	if(preload){
-		$(window).on("load", function () {
-			preloader.fadeOut('slow',function () {
-				$(this).remove();
-			});
-		});
-	}
 })();
 // Block name: Slider
 // Dependencies: velocity.js, owl.carousel.js
@@ -22699,6 +22712,21 @@ return function (global, window, document, undefined) {
 			});
 		});
 	});
+})();
+// Block name: Preloader
+// Dependencies: no dependencies
+(function(){
+	var preloader = $('.js-preloader');
+	var preload = $('.js-preload-me').length;
+
+	// Check if the preloader is active
+	if(preload){
+		$(window).on("load", function () {
+			preloader.fadeOut('slow',function () {
+				$(this).remove();
+			});
+		});
+	}
 })();
 // Block name: Stats
 // Dependencies: jquery.animateNumber.js, jquery.inview.js
@@ -22844,34 +22872,6 @@ return function (global, window, document, undefined) {
 // Docs: https://github.com/QassimHassan/YouTube_PopUp
 (function(){
 	$(".js-video").YouTubePopUp();
-})();
-// Block name: Header
-// Dependencies: no dependencies
-// Docs: 
-(function(){
-	var header = $(".js-header").first();
-	var logo = header.find('.js-logo__image');
-
-	var updateHeader = function() {
-		if($(window).scrollTop() === 0){
-			header.removeClass('header--fixed');
-			if (logo.data('switch') === true) {
-				logo.attr("src","assets/img/common/logo/logo.png");
-			}
-		}else{
-			header.addClass('header--fixed');
-			if (logo.data('switch') === true) {
-				logo.attr("src","assets/img/common/logo/logo-dark.png");
-			}
-		}
-	};
-
-	if (header.length) { updateHeader(); }
-
-	$(window).scroll(function () {
-		updateHeader();
-	});
-
 })();
 	
 })(jQuery);
