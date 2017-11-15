@@ -36,6 +36,56 @@
 		}
 	});
 })();
+
+
+(function($) { 
+    var element = $('.follow-scroll-box '),
+        originalY = 0;
+    
+
+
+    // Space between element and top of screen (when scrolling)
+    var topMargin = $( element ).data( 'margin-top' ) || 100;
+    
+    // Should probably be set in CSS; but here just for emphasis
+   // element.css('position', 'absolute');
+    
+    $(window).on('scroll', function(event) {
+        var scrollTop 	= $(window).scrollTop();
+        var newTop		= scrollTop < originalY
+		                    ? 0
+		                    : scrollTop - originalY + topMargin;
+        
+		if (newTop < 850 ) {
+			element.addClass( 'follow-scroll-box--invisible' );
+
+		}  else {
+			element.removeClass( 'follow-scroll-box--invisible' );	
+		}                  
+
+        element.stop(false, false).animate({
+            top: newTop
+        }, 300);
+    });
+})(jQuery);
+// Block name: Accordion
+// Dependencies: no dependencies
+(function(){
+	$(".js-accordion").each(function() {
+		var accordion = $(this);
+		var select = {
+			title: ".accordion__title",
+			content: ".accordion__content"
+		};
+
+		var title = accordion.find(select.title);
+
+		title.on('click', function(event) {
+			event.preventDefault();
+			$(this).toggleClass('accordion__title--active').parent().find(select.content).slideToggle();
+		});
+	});
+})();
 // Block name: Carousel
 // Dependencies: owl.carousel.js
 // Docs: https://github.com/OwlCarousel2/OwlCarousel2
@@ -129,24 +179,6 @@
 	});
 
 })();
-// Block name: Accordion
-// Dependencies: no dependencies
-(function(){
-	$(".js-accordion").each(function() {
-		var accordion = $(this);
-		var select = {
-			title: ".accordion__title",
-			content: ".accordion__content"
-		};
-
-		var title = accordion.find(select.title);
-
-		title.on('click', function(event) {
-			event.preventDefault();
-			$(this).toggleClass('accordion__title--active').parent().find(select.content).slideToggle();
-		});
-	});
-})();
 // Block name: Map
 // Dependencies: Google Maps API
 // Docs: https://developers.google.com/maps/
@@ -170,43 +202,55 @@
         "elementType": "labels.text.stroke",
         "stylers": [
             {
-                "color": "#000000"
+                "visibility": "on"
             },
             {
-                "lightness": 13
+                "color": "#424b5b"
+            },
+            {
+                "weight": 2
+            },
+            {
+                "gamma": "1"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
             }
         ]
     },
     {
         "featureType": "administrative",
-        "elementType": "geometry.fill",
+        "elementType": "geometry",
         "stylers": [
             {
-                "color": "#000000"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#144b53"
+                "weight": 0.6
             },
             {
-                "lightness": 14
+                "color": "#545b6b"
             },
             {
-                "weight": 1.4
+                "gamma": "0"
             }
         ]
     },
     {
         "featureType": "landscape",
-        "elementType": "all",
+        "elementType": "geometry",
         "stylers": [
             {
-                "color": "#08304b"
+                "color": "#545b6b"
+            },
+            {
+                "gamma": "1"
+            },
+            {
+                "weight": "10"
             }
         ]
     },
@@ -215,79 +259,46 @@
         "elementType": "geometry",
         "stylers": [
             {
-                "color": "#0c4152"
-            },
-            {
-                "lightness": 5
+                "color": "#666c7b"
             }
         ]
     },
     {
-        "featureType": "road.highway",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#000000"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#0b434f"
-            },
-            {
-                "lightness": 25
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#000000"
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#0b3d51"
-            },
-            {
-                "lightness": 16
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
+        "featureType": "poi.park",
         "elementType": "geometry",
         "stylers": [
             {
-                "color": "#000000"
+                "color": "#545b6b"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#424a5b"
+            },
+            {
+                "lightness": "0"
             }
         ]
     },
     {
         "featureType": "transit",
-        "elementType": "all",
+        "elementType": "geometry",
         "stylers": [
             {
-                "color": "#146474"
+                "color": "#666c7b"
             }
         ]
     },
     {
         "featureType": "water",
-        "elementType": "all",
+        "elementType": "geometry",
         "stylers": [
             {
-                "color": "#021019"
+                "color": "#2e3546"
             }
         ]
     }

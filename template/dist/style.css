@@ -9602,6 +9602,20 @@ div.video:before {
 .section-subtitle--important {
   color: #000000;
 }
+/* ==========================================================================
+   Block: follow-scroll-box
+   Dependencies: no dependencies
+   ========================================================================== */
+.follow-scroll-box {
+  position: absolute;
+  left: 0;
+  z-index: 100000;
+  background-color: red;
+}
+.follow-scroll-box--right {
+  right: 0;
+  left: unset;
+}
 #features {
   padding-bottom: 0;
 }

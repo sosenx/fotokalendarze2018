@@ -30,3 +30,35 @@
 		}
 	});
 })();
+
+
+(function($) { 
+    var element = $('.follow-scroll-box '),
+        originalY = 0;
+    
+
+
+    // Space between element and top of screen (when scrolling)
+    var topMargin = $( element ).data( 'margin-top' ) || 100;
+    
+    // Should probably be set in CSS; but here just for emphasis
+   // element.css('position', 'absolute');
+    
+    $(window).on('scroll', function(event) {
+        var scrollTop 	= $(window).scrollTop();
+        var newTop		= scrollTop < originalY
+		                    ? 0
+		                    : scrollTop - originalY + topMargin;
+        
+		if (newTop < 850 ) {
+			element.addClass( 'follow-scroll-box--invisible' );
+
+		}  else {
+			element.removeClass( 'follow-scroll-box--invisible' );	
+		}                  
+
+        element.stop(false, false).animate({
+            top: newTop
+        }, 300);
+    });
+})(jQuery);
