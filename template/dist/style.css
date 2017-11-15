@@ -9682,11 +9682,94 @@ div.video:before {
   position: absolute;
   left: 0;
   z-index: 100000;
+}
+.follow-scroll-box .sidebar-box {
   background-color: red;
+  margin-bottom: 2rem;
+  border: 1px solid white;
+  padding: 1.5rem;
+  padding-right: 2rem;
+  border-radius: .6rem 0 0 .6rem ;
+  max-width: 23rem;
+  padding-bottom: 2rem;
+}
+.follow-scroll-box .sidebar-box__title {
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  color: white;
+  font-weight: bold;
+  padding-top: 1.5rem;
+  line-height: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid white;
+}
+.follow-scroll-box .sidebar-box__title--icon {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  line-height: 3.5rem;
+}
+.follow-scroll-box .sidebar-box__title--icon img {
+  padding-right: 1rem;
+  transform: translateY(-0.55rem);
+}
+.follow-scroll-box .sidebar-box__title--thin {
+  font-weight: normal;
+}
+.follow-scroll-box .sidebar-box__subtitle {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  line-height: 3rem;
+  color: white;
+}
+.follow-scroll-box .sidebar-box__text {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: normal;
+  line-height: 2rem;
+  color: white;
+}
+.follow-scroll-box .sidebar-box__button {
+  text-decoration: none;
+  margin-top: 2rem;
+  transition: all .5s;
+  padding: 1rem;
+  font-weight: 400;
+  background-color: #E30330;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 2.5rem;
+  color: white;
+}
+.follow-scroll-box .sidebar-box__button i.fa {
+  font-size: 2rem;
+  padding-left: 1rem;
+}
+.follow-scroll-box .sidebar-box__button:hover {
+  background-color: white;
+  border-color: #E30330;
+  color: #E30330;
+  cursor: pointer;
+}
+.follow-scroll-box .sidebar-box.clixx {
+  background-color: #0084FF;
+}
+.follow-scroll-box .sidebar-box.clixx-pdf {
+  background-color: #78AB11;
+}
+.follow-scroll-box--invisible {
+  transition: all .5s;
+  opacity: 0;
 }
 .follow-scroll-box--right {
   right: 0;
   left: unset;
+  border-radius: 0 .6rem .6rem 0;
+}
+.follow-scroll-box--right .sidebar-box {
+  padding-left: 2rem;
 }
 #features {
   padding-bottom: 0;
@@ -9705,7 +9788,7 @@ div.video:before {
   font-size: 1.6rem;
 }
 #download {
-  tbackground-image: url('/assets/img/common/gaad/downloads-bg.jpg');
+  background-image: url('/assets/img/common/gaad/downloads-bg.jpg');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -9722,6 +9805,7 @@ div.video:before {
   padding-right: 0;
 }
 #download .download__info {
+  background-color: #54780b;
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
@@ -9730,34 +9814,8 @@ div.video:before {
   padding: 5rem 0 6rem;
   margin-bottom: 5rem;
   position: relative;
+  color: white;
 }
 #download .download__info > * {
   z-index: 10;
-}
-#download:before {
-  content: '';
-  width: 100%;
-  height: 20%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 8;
-  background-image: url('/assets/img/common/gaad/downloads-bg.jpg');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-}
-#download:after {
-  content: '';
-  width: 100%;
-  height: 25%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: url('/assets/img/common/gaad/downloads-bg.jpg');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  z-index: 9;
-  filter: blur(10px);
 }

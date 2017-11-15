@@ -21,7 +21,7 @@
 }
 
 
-#download{t
+#download{
 
 	background-image: url( '/assets/img/common/gaad/downloads-bg.jpg' );
 		background-position: center;
@@ -44,7 +44,7 @@
 	}
 
 	.download__info{
-		
+		background-color: #54780b;
 	    display: flex;
 	    justify-content: center;
 	    flex-wrap: nowrap;
@@ -53,39 +53,12 @@
 	    padding: 5rem 0 6rem;
 	    margin-bottom: 5rem;
 		position: relative;
-		
+		color: white;
 		> * {
 			z-index: 10;
 		}
 	}
 
 
-	&:before {
-		content: '';
-		width: 100%;
-		height: 20%;	
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 8;
-		background-image: url( '/assets/img/common/gaad/downloads-bg.jpg' );
-		background-position: center;
-		background-size: cover;
-		background-attachment: fixed;
-	}
-    &:after{
-    	content: '';
-		width: 100%;
-		height: 25%;	
-		position: absolute;
-		top: 0;
-		left: 0;
-		background-image: url( '/assets/img/common/gaad/downloads-bg.jpg' );
-		background-position: center;
-		background-size: cover;
-		background-attachment: fixed;
-		z-index: 9;
-		filter: blur(10px);
-    }
 
 }

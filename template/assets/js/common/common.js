@@ -50,7 +50,7 @@
 		                    ? 0
 		                    : scrollTop - originalY + topMargin;
         
-		if (newTop < 850 ) {
+		if (newTop < 750 ) {
 			element.addClass( 'follow-scroll-box--invisible' );
 
 		}  else {
