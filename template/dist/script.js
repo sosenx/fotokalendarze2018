@@ -22483,24 +22483,6 @@ return function (global, window, document, undefined) {
         }, 300);
     });
 })(jQuery);
-// Block name: Accordion
-// Dependencies: no dependencies
-(function(){
-	$(".js-accordion").each(function() {
-		var accordion = $(this);
-		var select = {
-			title: ".accordion__title",
-			content: ".accordion__content"
-		};
-
-		var title = accordion.find(select.title);
-
-		title.on('click', function(event) {
-			event.preventDefault();
-			$(this).toggleClass('accordion__title--active').parent().find(select.content).slideToggle();
-		});
-	});
-})();
 // Block name: Carousel
 // Dependencies: owl.carousel.js
 // Docs: https://github.com/OwlCarousel2/OwlCarousel2
@@ -22525,6 +22507,24 @@ return function (global, window, document, undefined) {
 		});
 	});
 
+})();
+// Block name: Accordion
+// Dependencies: no dependencies
+(function(){
+	$(".js-accordion").each(function() {
+		var accordion = $(this);
+		var select = {
+			title: ".accordion__title",
+			content: ".accordion__content"
+		};
+
+		var title = accordion.find(select.title);
+
+		title.on('click', function(event) {
+			event.preventDefault();
+			$(this).toggleClass('accordion__title--active').parent().find(select.content).slideToggle();
+		});
+	});
 })();
 // Block name: Contact Form
 // Dependencies: jquery.form-validator.js
@@ -22803,6 +22803,27 @@ return function (global, window, document, undefined) {
 		});
 	}
 })();
+// Block name: Stats
+// Dependencies: jquery.animateNumber.js, jquery.inview.js
+// Docs: 
+// https://github.com/aishek/jquery-animateNumber
+// https://github.com/protonet/jquery.inview
+(function(){
+	var numbers = $('.js-stats__number');
+
+	numbers.each(function () {
+		var number = $(this);
+		var to = number.data('number');
+		var units = number.data('units') ? number.data('units') : '';
+
+		number.one("inview",function () {
+			number.animateNumber({
+				number: to,
+				numberStep: $.animateNumber.numberStepFactories.append(units)
+			}, 3000);
+		});
+	});
+})();
 // Block name: Slider
 // Dependencies: velocity.js, owl.carousel.js
 // Docs: 
@@ -22881,27 +22902,6 @@ return function (global, window, document, undefined) {
 			slider.on("translated.owl.carousel", function() {
 				animationIn($(this));
 			});
-		});
-	});
-})();
-// Block name: Stats
-// Dependencies: jquery.animateNumber.js, jquery.inview.js
-// Docs: 
-// https://github.com/aishek/jquery-animateNumber
-// https://github.com/protonet/jquery.inview
-(function(){
-	var numbers = $('.js-stats__number');
-
-	numbers.each(function () {
-		var number = $(this);
-		var to = number.data('number');
-		var units = number.data('units') ? number.data('units') : '';
-
-		number.one("inview",function () {
-			number.animateNumber({
-				number: to,
-				numberStep: $.animateNumber.numberStepFactories.append(units)
-			}, 3000);
 		});
 	});
 })();

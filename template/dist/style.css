@@ -9805,7 +9805,7 @@ div.video:before {
   padding-right: 0;
 }
 #download .download__info {
-  background-color: #54780b;
+  background-color: rgba(113, 154, 6, 0.91);
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
