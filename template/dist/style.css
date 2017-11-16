@@ -9774,6 +9774,21 @@ div.video:before {
 #features {
   padding-bottom: 0;
 }
+#plans .download__info {
+  background-color: rgba(113, 154, 6, 0.91);
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0 6rem;
+  margin-bottom: 5rem;
+  position: relative;
+  color: white;
+}
+#plans .download__info > * {
+  z-index: 10;
+}
 #screenshots {
   padding-bottom: 0;
   margin-bottom: 0;
@@ -9803,19 +9818,4 @@ div.video:before {
 #download .download-button-wrapper {
   padding-left: 0;
   padding-right: 0;
-}
-#download .download__info {
-  background-color: rgba(113, 154, 6, 0.91);
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  align-items: center;
-  padding: 5rem 0 6rem;
-  margin-bottom: 5rem;
-  position: relative;
-  color: white;
-}
-#download .download__info > * {
-  z-index: 10;
 }
