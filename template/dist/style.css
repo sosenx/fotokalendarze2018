@@ -9684,16 +9684,19 @@ div.video:before {
   z-index: 100000;
 }
 .follow-scroll-box .sidebar-box {
-  background-color: red;
-  margin-bottom: 2rem;
   border: 1px solid white;
   padding: 1.5rem;
   padding-right: 2rem;
+  margin-bottom: 1rem;
   border-radius: .6rem 0 0 .6rem ;
-  max-width: 23rem;
+  max-width: 3rem;
   padding-bottom: 2rem;
+  height: 20rem;
+  position: relative;
+  top: 0;
 }
 .follow-scroll-box .sidebar-box__title {
+  display: none;
   margin-bottom: 1.5rem;
   font-size: 3rem;
   color: white;
@@ -9704,7 +9707,7 @@ div.video:before {
   border-bottom: 1px solid white;
 }
 .follow-scroll-box .sidebar-box__title--icon {
-  display: flex;
+  display: none;
   justify-content: flex-start;
   align-items: flex-end;
   line-height: 3.5rem;
@@ -9714,15 +9717,18 @@ div.video:before {
   transform: translateY(-0.55rem);
 }
 .follow-scroll-box .sidebar-box__title--thin {
+  display: none;
   font-weight: normal;
 }
 .follow-scroll-box .sidebar-box__subtitle {
+  display: none;
   margin-bottom: 2rem;
   font-size: 3rem;
   line-height: 3rem;
   color: white;
 }
 .follow-scroll-box .sidebar-box__text {
+  display: none;
   margin-bottom: 1rem;
   font-size: 1.8rem;
   font-weight: normal;
@@ -9730,16 +9736,24 @@ div.video:before {
   color: white;
 }
 .follow-scroll-box .sidebar-box__button {
+  position: absolute;
+  top: 18rem;
+  left: 1em;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  background-color: transparent ;
+  height: 1rem;
+  width: 20rem;
   text-decoration: none;
   margin-top: 2rem;
   transition: all .5s;
   padding: 1rem;
   font-weight: 400;
-  background-color: #E30330;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid white;
+  border: none;
   border-radius: 2.5rem;
   color: white;
 }
@@ -9748,9 +9762,8 @@ div.video:before {
   padding-left: 1rem;
 }
 .follow-scroll-box .sidebar-box__button:hover {
-  background-color: white;
-  border-color: #E30330;
-  color: #E30330;
+  background-color: transparent;
+  border-color: transparent;
   cursor: pointer;
 }
 .follow-scroll-box .sidebar-box.clixx {
@@ -9770,6 +9783,92 @@ div.video:before {
 }
 .follow-scroll-box--right .sidebar-box {
   padding-left: 2rem;
+}
+@media screen and (min-width: 1440px) {
+  .follow-scroll-box .sidebar-box {
+    margin-bottom: 2rem;
+    border: 1px solid white;
+    padding: 1.5rem;
+    padding-right: 2rem;
+    border-radius: .6rem 0 0 .6rem ;
+    max-width: 23rem;
+    height: auto;
+    padding-bottom: 2rem;
+  }
+  .follow-scroll-box .sidebar-box__title {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    padding-top: 1.5rem;
+    line-height: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid white;
+  }
+  .follow-scroll-box .sidebar-box__title--icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    line-height: 3.5rem;
+  }
+  .follow-scroll-box .sidebar-box__title--icon img {
+    padding-right: 1rem;
+    transform: translateY(-0.55rem);
+  }
+  .follow-scroll-box .sidebar-box__title--thin {
+    font-weight: normal;
+  }
+  .follow-scroll-box .sidebar-box__subtitle {
+    display: block;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    line-height: 3rem;
+    color: white;
+  }
+  .follow-scroll-box .sidebar-box__text {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: normal;
+    line-height: 2rem;
+    color: white;
+  }
+  .follow-scroll-box .sidebar-box__button {
+    height: 3.5rem;
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: none;
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: all .5s;
+    padding: 1rem;
+    font-weight: 400;
+    background-color: #E30330;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 2.5rem;
+    color: white;
+  }
+  .follow-scroll-box .sidebar-box__button i.fa {
+    font-size: 2rem;
+    padding-left: 1rem;
+  }
+  .follow-scroll-box .sidebar-box__button:hover {
+    background-color: white;
+    border-color: #E30330;
+    color: #E30330;
+    cursor: pointer;
+  }
+  .follow-scroll-box .sidebar-box.clixx {
+    background-color: #0084FF;
+  }
+  .follow-scroll-box .sidebar-box.clixx-pdf {
+    background-color: #78AB11;
+  }
 }
 #features {
   padding-bottom: 0;

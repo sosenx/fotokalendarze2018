@@ -10,16 +10,19 @@
 		z-index: 100000;
 		
 		.sidebar-box{
-			background-color: red;
-			margin-bottom:2rem; 
 			border: 1px solid white;
 			padding: 1.5rem;
 			padding-right: 2rem;
+			margin-bottom: 1rem;
 			border-radius: .6rem 0 0 .6rem ;
-			max-width: 23rem;
+			max-width: 3rem;
 			padding-bottom: 2rem;
+			height: 20rem;
+			position: relative;
+			top: 0;
 
 			&__title{
+				display: none;
 				margin-bottom: 1.5rem;
 				font-size: 3rem;
 				color: white;
@@ -30,7 +33,7 @@
 				border-bottom:1px solid white;
 
 				&--icon{
-					display: flex;
+					display: none;					
 					justify-content: flex-start;
 					align-items: flex-end;
 					line-height: 3.5rem;
@@ -42,11 +45,13 @@
 				}
 
 				&--thin{
+					display: none;
 					font-weight: normal;
 				}
 			}
 
-			&__subtitle{				
+			&__subtitle{	
+				display: none;			
 				margin-bottom: 2rem;
 				font-size: 3rem;
 				line-height: 3rem;
@@ -54,7 +59,8 @@
 			}
 
 
-			&__text{				
+			&__text{
+				display: none;				
 				margin-bottom: 1rem;
 				font-size: 1.8rem;
 				font-weight: normal;
@@ -63,18 +69,26 @@
 			}
 			
 			&__button{
+				position: absolute;
+				top:18rem;
+				left:1em;
+				transform: rotate( -90deg );
+				transform-origin: top left;
+				background-color: transparent ;
+				height:1rem;	
+				width: 20rem;			
 				text-decoration: none;
 				margin-top: 2rem;
 				transition: all .5s;
 				padding: 1rem;
 				font-weight: 400;			
-				background-color: #E30330;
+				background-color: transparent;
 				display:flex;
 				justify-content: center;
 				align-items: center;
-				border: 2px solid white;
+				border: none;
 				border-radius:2.5rem;
-				color:white;
+				color: white;
 
 				i.fa {
 					font-size: 2rem;
@@ -82,9 +96,9 @@
 				}
 
 				&:hover{
-					background-color: white;
-					border-color: #E30330;				
-					color: #E30330;
+					background-color: transparent;
+					border-color: transparent;				
+					
 					cursor: pointer;
 				}
 			}
@@ -113,7 +127,110 @@
 			.sidebar-box{
 				padding-left: 2rem;
 			}
-		 } 
+		}
+   }
 
 
+   @media screen and (min-width: 1440px ) {
+   	   .follow-scroll-box{
+
+   	   	.sidebar-box{		
+			margin-bottom:2rem; 
+			border: 1px solid white;
+			padding: 1.5rem;
+			padding-right: 2rem;
+			border-radius: .6rem 0 0 .6rem ;
+			max-width: 23rem;
+			height: auto;
+			padding-bottom: 2rem;
+
+			&__title{
+				display: block;
+				margin-bottom: 1.5rem;
+				font-size: 3rem;
+				color: white;
+				font-weight: bold;
+				padding-top: 1.5rem;
+				line-height: 2.5rem;
+				padding-bottom: 1rem;
+				border-bottom:1px solid white;
+
+				&--icon{
+					display: flex;
+					justify-content: flex-start;
+					align-items: flex-end;
+					line-height: 3.5rem;
+
+					img {
+						padding-right: 1rem;
+						transform: translateY(-.55rem;)
+					}
+				}
+
+				&--thin{
+					font-weight: normal;
+				}
+			}
+
+			&__subtitle{		
+				display: block;		
+				margin-bottom: 2rem;
+				font-size: 3rem;
+				line-height: 3rem;
+				color: white;
+			}
+
+
+			&__text{
+				display: block;				
+				margin-bottom: 1rem;
+				font-size: 1.8rem;
+				font-weight: normal;
+				line-height: 2rem;
+				color: white;
+			}
+			
+			&__button{
+				height:3.5rem;
+				position: relative;
+				top:unset;
+				left:unset;
+				transform:  none;
+				text-decoration: none;
+				margin-top: 2rem;
+				transition: all .5s;
+				padding: 1rem;
+				font-weight: 400;			
+				background-color: #E30330;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border: 2px solid white;
+				border-radius:2.5rem;
+				color:white;
+
+				i.fa {
+					font-size: 2rem;
+					padding-left: 1rem;
+				}
+
+				&:hover{
+					background-color: white;
+					border-color: #E30330;				
+					color: #E30330;
+					cursor: pointer;
+				}
+			}
+
+
+			&.clixx{
+				background-color: #0084FF;
+			}
+
+			&.clixx-pdf{
+				background-color: #78AB11;
+			}
+
+		}	
+   	   }
    }
