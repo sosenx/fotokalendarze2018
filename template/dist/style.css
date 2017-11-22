@@ -7051,7 +7051,7 @@ body.logged-in .YouTubePopUp-Wrap {
   background-position: center center;
 }
 .hero--skin-1 {
-  background-image: url("../assets/img/common/backgrounds/hero-2.jpg");
+  background-image: url("../assets/img/common/backgrounds/error.jpg");
   padding: 150px 0;
 }
 .hero--skin-2 {
@@ -8128,7 +8128,7 @@ a[href^="https://maps.google.com/maps"] {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#66000000', GradientType=0);
 }
 .slider__slide {
-  padding-top: 85px;
+  padding-top: 4rem;
   position: relative;
 }
 .slider__image {
@@ -8163,7 +8163,7 @@ a[href^="https://maps.google.com/maps"] {
   width: 600px;
   max-width: 100%;
   letter-spacing: -0.01em;
-  line-height: 39px;
+  line-height: 1rem;
   opacity: 0;
 }
 .slider__highlight {
@@ -9110,18 +9110,24 @@ div.video:before {
   bottom: 0;
 }
 .slider .owl-dots .owl-dot.active:after {
-  width: 100%;
+  width: 0%;
 }
 .slider .owl-dots .owl-dot:last-child {
   margin: 0;
 }
 .slider .owl-dots .owl-dot span:before {
-  content: "slide";
+  content: "\f0c8";
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .slider .owl-dots .owl-dot span:after {
-  counter-increment: dots;
-  content: "0" counter(dots);
-  margin-left: 3px;
+  display: none;
+}
+.slider .owl-dots .owl-dot.active span {
   color: #0084ff;
 }
 .slider:after {
@@ -9143,7 +9149,7 @@ div.video:before {
 }
 .slider__image {
   opacity: 0;
-  width: 45rem !important;
+  width: 39rem !important;
   margin: 0 auto;
   z-index: 5;
   position: relative;
@@ -9156,8 +9162,8 @@ div.video:before {
   height: 50%;
   z-index: 10;
   background-color: transparent;
-  top: 29.1rem;
-  transform: translateX(7%);
+  top: 19rem;
+  transform: translateX(7%) scale(1.1);
 }
 .slider__image .slider__price-label-wrapper ul {
   display: flex;
@@ -9208,10 +9214,10 @@ div.video:before {
 }
 .slider__secondary {
   opacity: 0;
-  width: 35rem !important;
+  width: 30rem !important;
   position: absolute;
   bottom: -3rem;
-  left: 60%;
+  left: 65%;
   margin-left: -457px;
   z-index: 1;
   box-shadow: none;
@@ -9220,7 +9226,7 @@ div.video:before {
   content: '';
   bottom: 0;
   height: 40rem;
-  width: 22rem;
+  width: 10rem;
   background-color: #070708;
   z-index: 4;
   box-shadow: 0 0 13rem 3rem black;
@@ -9232,7 +9238,7 @@ div.video:before {
 }
 .slider__secondary--right {
   left: auto;
-  right: 60%;
+  right: 65%;
   margin-right: -457px;
 }
 .slider__title {
@@ -9243,13 +9249,14 @@ div.video:before {
   width: 800px;
   max-width: 100%;
   letter-spacing: -0.01em;
-  line-height: 5.5rem;
+  line-height: 3.5rem;
   opacity: 0;
-  margin: -5rem auto 8rem auto;
+  margin: -5rem auto 5rem auto;
   letter-spacing: .25px;
 }
 .slider__title--secline {
   display: block;
+  font-size: 3rem;
   font-weight: 300;
   font-family: 'Open Sans', sans-serif;
 }
@@ -9266,8 +9273,8 @@ div.video:before {
    Dependencies: no dependencies
    ========================================================================== */
 .hero {
-  padding-top: 150px;
-  background-image: url("../assets/img/common/backgrounds/hero-2.jpg");
+  padding-top: 11rem;
+  background-image: url("../assets/img/common/backgrounds/error.jpg");
   background-size: cover;
   background-position: center center;
 }

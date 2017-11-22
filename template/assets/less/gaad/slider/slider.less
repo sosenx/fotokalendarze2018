@@ -40,7 +40,7 @@
 		}
 
 		&.active:after{
-			width: 100%;
+			width: 0%;
 		}
 
 		&:last-child{
@@ -49,21 +49,26 @@
 	}
 
 	.owl-dots .owl-dot span{
+
 		&:before{
-			content: "slide";
+			content: "\f0c8";
+			display: inline-block;
+		    font: normal normal normal 14px/1 FontAwesome;
+		    font-size: inherit;
+		    text-rendering: auto;
+		    -webkit-font-smoothing: antialiased;
+		    -moz-osx-font-smoothing: grayscale;
 		}
 
 		&:after{
-			counter-increment: dots;
-			content: "0" counter(dots);
-			margin-left: 3px;
-
-			color: @color__primary;
+			display: none;			
 		}
 	}
 
+	.owl-dots .owl-dot.active span{
+		color:#0084ff;
+	}
 	
-
 	&:after{
 		position: absolute;
 		content: '';
@@ -93,7 +98,7 @@
 
 	&__image{
 		opacity: 0;
-	    width: 45rem !important;
+	    width: 39rem !important;
 	    margin: 0 auto;
 	    z-index: 5;
 	    position: relative;
@@ -108,9 +113,9 @@
 		    height: 50%;
 		    z-index: 10;
 		    background-color: transparent;
-		    top: 29.1rem;
+		    top: 19rem;
 
-		    transform: translateX(7%);
+		    transform: translateX(7%) scale(1.1);
 
 		    ul{
 		    	display: flex;
@@ -168,10 +173,10 @@
 
 	&__secondary{
 		opacity: 0;
-		width: 35rem !important;
+		width: 30rem !important;
 		position: absolute;
 		bottom: -3rem;
-		left: 60%;
+		left: 65%;
 		margin-left: -457px;
 		z-index: 1;
 		box-shadow: none;
@@ -181,7 +186,7 @@
 		    position: absolute;
 		    bottom: 0;		    
 		    height: 40rem;
-		    width: 22rem;
+		    width: 10rem;
 		    background-color: #070708;
 		    z-index: 4;
 		    box-shadow: 0 0 13rem 3rem black;
@@ -195,7 +200,7 @@
 
 		&--right{
 			left: auto;
-			right: 60%;
+			right: 65%;
 			margin-right: -457px;
 		}
 
@@ -209,13 +214,14 @@
 		width: 800px;
 		max-width: 100%;
 		letter-spacing: -0.01em;
-		line-height: 5.5rem; 
+		line-height: 3.5rem; 
 		opacity: 0;
-		margin: -5rem auto 8rem auto;
+		margin: -5rem auto 5rem auto;
 		letter-spacing: .25px;
 		
 		&--secline{
 			display: block;
+			font-size:3rem;
 			font-weight: 300;
 			font-family: @font__secondary;
 		}
